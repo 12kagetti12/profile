@@ -26,12 +26,12 @@ h2 {
 }
 
 p {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif, "Hiragino Sans";
   font-size: 1.6rem;
 }
 
 section {
-  padding: 0 2ch 20ch;
+  padding: 0 2vw 20vh;
 }
 
 button {
@@ -55,16 +55,16 @@ button {
 .l-header_flex_inlineTop {
   position: fixed;
   width: 100%;
-  height: 10ch;
-  min-height: 10ch;
+  height: 10vh;
+  min-height: 10vh;
   margin: 0 auto;
   top: 0;
   background-color: white;
 }
 
 .l-header_addMargin {
-  height: 10ch;
-  padding: 0 2ch;
+  height: 10vh;
+  padding: 0 2vw;
 }
 
 .l-addMaxWidth_x_center_y_column {
@@ -73,7 +73,7 @@ button {
 }
 
 .l-footer {
-  padding: 2ch 0;
+  padding: 2vh 0;
 }
 
 .l-grid_x_25rem-1fr {
@@ -109,14 +109,14 @@ button {
 /* Component ---------------------*/
 
 .c-header_logo {
-  width: 3ch;
+  width: 100px;
 }
 
 .c-main_visual {
   max-width: 1920px;
   margin: 0 auto;
-  margin-top: 7ch;
-  padding-bottom: 20ch;
+  margin-top: 7vh;
+  padding-bottom: 20vh;
 }
 
 .c-main_visual img {
@@ -144,10 +144,6 @@ button {
 		height: 100vh;
 		object-position: -45vw;
 	}
-  
-  .c-mediaOnly {
-    display: flex;
-  }
 
   .c-header_nav_noStyle {
     position: absolute;
@@ -171,12 +167,16 @@ button {
     width: fit-content;
     padding: 24px 16px;
   }
+  
+  .c-mediaOnly {
+    display: flex;
+  }
 
   .c-media_navButton {
     position: fixed;
-    right: 3ch;
-    top: 4ch;
-    height: 6ch;
+    right: 3vw;
+    top: 4vh;
+    height: 5vh;
     z-index: 10;
     text-align: center;
     color: #393e46;
@@ -278,12 +278,12 @@ button {
 }
 
 .p-contentTitle_margin {
-  margin: 0 0 0.5ch 0;
+  margin: 0 0 0.5vh 0;
 }
 
 .p-image_margin {
   max-width: 100%;
-  margin-bottom: 2ch;
+  margin-bottom: 2vh;
 }
 
 .p-footerStyle {
