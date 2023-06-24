@@ -17,14 +17,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header/>
-      <main className={`${styles.main} ${inter.className}`}>
+      <main className="">
         <div className={styles.center}>
           <Image
-            className={styles.logo}
+            className={styles.center}
             src="/mainvisual_seaClouds.jpg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
+            alt="mainvisual"
+            width={1920}
+            height={1080}
             priority
           />
         </div>
