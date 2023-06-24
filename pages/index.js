@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import ContentCard from '@/components/cotent_card'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -41,6 +42,20 @@ export default function Home() {
                 <p>明日が今日よりも良き日であるように、今 "　　" に何ができるのか？</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="l-addMaxWidth_x_center_y_column" id="area_work">
+          <div className="l-x_center_y_column">
+            <h1 className="p-sectionTitle_margin p-sectionTitle_underline">Work</h1>
+            <ul className="l-grid_x_25rem-1fr">
+              <ContentCard />
+              <li className="l-x_center_y_column">
+                <img className="p-image_margin" src="img/photo_ diving.jpg" alt="Web"/>
+                <h2 className="p-contentTitle_margin">Web</h2>
+                <p>テキストが入りますテキストがいりますテキストが入りますテキストがいりますテキストが入りますテキストがいりますテキストが入りますテキストがいりますテキストが入りますテキストがいりますテキストが入りますテキストがいりますテキストが入りますテキストがいりますテキストが入りますテキストがいります</p>
+              </li>
+            </ul>  
           </div>
         </section>
 
