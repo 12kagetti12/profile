@@ -49,12 +49,16 @@ export default function Home() {
           <div className="l-x_center_y_column">
             <h1 className="p-sectionTitle_margin p-sectionTitle_underline">Work</h1>
             <ul className="l-grid_x_25rem-1fr">
-              <ContentCard />
-              <li className="l-x_center_y_column">
-                <img className="p-image_margin" src="img/photo_ diving.jpg" alt="Web"/>
-                <h2 className="p-contentTitle_margin">Web</h2>
-                <p>テキストが入りますテキストがいりますテキストが入りますテキストがいりますテキストが入りますテキストがいりますテキストが入りますテキストがいりますテキストが入りますテキストがいりますテキストが入りますテキストがいりますテキストが入りますテキストがいりますテキストが入りますテキストがいります</p>
-              </li>
+              <ContentCard
+                imgSrc="img/photo_coffee.jpg" 
+                contentTitle="Paper" 
+                text="紙媒体のポートフォリをまとめています"
+              />
+              <ContentCard
+                imgSrc="img/photo_ diving.jpg" 
+                contentTitle="Web" 
+                text="webブラウザのポートフォリをまとめています"
+              />
             </ul>  
           </div>
         </section>
