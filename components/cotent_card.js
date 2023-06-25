@@ -2,9 +2,9 @@ import styles from '@/styles/Home.module.css'
 
 export function ContentCard(props) {
   const src = props.imgSrc
-  const title = props.contentTitle;
+  const title = props.media;
   const text = props.text;
-  const imgTitle = props.contentTitle + ".img";
+  const imgTitle = props.media + ".img";
   return(
     <>
       <li className="l-x_center_y_column">
