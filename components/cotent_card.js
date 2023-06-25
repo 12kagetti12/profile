@@ -7,7 +7,7 @@ export function ContentCard(props) {
   const imgTitle = props.media + ".img";
   return(
     <>
-      <li className="l-x_center_y_column" key={props.id}>
+      <li className="l-x_center_y_column">
         <img className="p-image_margin" src={src} alt={imgTitle}/>
         <h2 className="p-contentTitle_margin">{title}</h2>
         <p>{text}</p>
