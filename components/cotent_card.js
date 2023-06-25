@@ -1,6 +1,6 @@
 import styles from '@/styles/Home.module.css'
 
-export default function ContentCard(props) {
+export function ContentCard(props) {
   const src = props.imgSrc
   const title = props.contentTitle;
   const text = props.text;

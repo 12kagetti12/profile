@@ -1,6 +1,6 @@
 import styles from '@/styles/Home.module.css'
 
-export default function Header(){
+export function Header(){
   return (
     <>
       <header id="header">
