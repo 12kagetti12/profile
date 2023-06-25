@@ -1,0 +1,34 @@
+/* =================================
+  Layout
+================================= */
+
+.L_Footer {
+  padding: 2vh 0;
+}
+
+.L_X_center_Y_column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* =================================
+  Object
+================================= */
+
+/* Component ---------------------*/
+
+/* Project -----------------------*/
+.P_FooterStyle {
+  font-size: 1.2rem;
+  color: rgb(127, 127, 127);
+}
+
+/* Utility -----------------------*/
+
+
+/* Enable hover only on non-touch devices */
+
+
+/* Tablet and Smaller Desktop */

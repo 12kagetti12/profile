@@ -1,10 +1,10 @@
-import styles from '@/styles/Home.module.css'
+import styles from './footer.module.css'
 
 export function Footer() {
   return(
     <>
-      <footer className="l-footer l-x_center_y_column">
-        <p className="p-footerStyle">&copy; Satoshi Kageyama</p>
+      <footer className={`${styles.L_Footer} ${styles.L_X_center_Y_column}`} >
+        <p className={styles.P_FooterStyle}>&copy; Satoshi Kageyama</p>
       </footer>
     </>
   );
