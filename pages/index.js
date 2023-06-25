@@ -11,12 +11,14 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const work = [
     {
-      occupation : "DTP",
-      media : "paper", 
-      imgSrc : "img/photo_coffee.jpg",
-      text : "紙媒体のポートフォリをまとめています"
+      id: 0,
+      occupation: "DTP",
+      media: "paper", 
+      imgSrc: "img/photo_coffee.jpg",
+      text: "紙媒体のポートフォリをまとめています"
     },
     {
+      id: 1,
       occupation : "web",
       media : "web", 
       imgSrc : "img/photo_ diving.jpg", 
@@ -66,6 +68,7 @@ export default function Home() {
             <ul className="l-grid_x_25rem-1fr">
               {work.map((item) => (
                 <ContentCard
+                  key = {item.id}
                   imgSrc = {item.imgSrc}
                   media = {item.media}
                   text = {item.text}
