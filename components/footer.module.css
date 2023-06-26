@@ -2,11 +2,11 @@
   Layout
 ================================= */
 
-.L_Footer {
+.l_footer {
   padding: 2vh 0;
 }
 
-.L_X_center_Y_column {
+.l_xCenter_yColumn {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +20,7 @@
 /* Component ---------------------*/
 
 /* Project -----------------------*/
-.P_FooterStyle {
+.p_footerStyle {
   font-size: 1.2rem;
   color: rgb(127, 127, 127);
 }
