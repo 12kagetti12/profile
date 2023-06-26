@@ -36,13 +36,14 @@ export default function Home() {
       </Head>
       <Header/>
       <main className="">
-        <div className={styles.center}>
+        <div className={styles.c_mainVisual} id="area_top">
           <Image
-            className={styles.center}
+            className={styles.c_responsive}
             src="/mainvisual_seaClouds.jpg"
-            alt="mainvisual"
+            alt="mainVisual"
             width={1920}
-            height={1080}
+            height={1280}
+            sizes="(max-width:640px) 70vw,(max-width:1200px) 90vw,100vw"
             priority
           />
         </div>

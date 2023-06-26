@@ -1,0 +1,159 @@
+/* =================================
+  Layout
+================================= */
+
+.l_flexInlineTop {
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  min-height: 10vh;
+  margin: 0 auto;
+  top: 0;
+  background-color: white;
+}
+
+.l_addMargin {
+  height: 10vh;
+  padding: 0 2vw;
+}
+
+.l_addMaxWidth_xCenter_yColumn {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.l_xAlignSide_yCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.l_xCenter_yCenter {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+
+
+
+/* =================================
+  Object
+================================= */
+
+/* Component ---------------------*/
+.c_logo {
+  width: 100px;
+}
+
+.c_nav_noStyle {
+  display: flex;
+  list-style: none;
+}
+
+.c_nav_xRight {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.c_mediaOnly {
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  .c_nav_noStyle {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    top: -100vh;
+    width: fit-content;
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: 3s;
+  }
+
+  .c_nav_noStyle.open {
+    top: 0vh;
+    height: 100vh;
+    transition: 0.8s;
+  }
+
+  .c_nav_xRight {
+    flex: none;
+    width: fit-content;
+    padding: 24px 16px;
+  }
+  
+  .c_mediaOnly {
+    display: flex;
+  }
+
+  .c_media_navButton {
+    position: fixed;
+    right: 3vw;
+    top: 4vh;
+    height: 5vh;
+    z-index: 10;
+    text-align: center;
+    color: #393e46;
+  }
+
+  .c_media_navButton_line {
+    display: block;
+    position: relative;
+    width: 100%;
+    top: -8px;
+    height: 3px;
+    background-color: #393e46;
+    border-radius: 1px;
+    transition: .2s;
+  }
+
+  .c_media_navButton_line.open {
+    background-color: transparent;
+  }
+
+  .c_media_navButton_line::before, 
+  .c_media_navButton_line::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #393e46;
+    border-radius: 1px;
+    transition: .5s;
+  }
+
+  .c_media_navButton_line::before {
+    transform: translateX(-50%) translateY(-8px) ;
+  }
+
+  .c_media_navButton_line.open::before {
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  .c_media_navButton_line::after {
+    transform: translateX(-50%) translateY(8px);
+  }
+
+  .c_media_navButton_line.open::after {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+}
+
+
+/* Project -----------------------*/
+.p_nav {
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 30%;
+}
+
+/* Utility -----------------------*/
+
+
+/* Enable hover only on non-touch devices */
+
+
+/* Tablet and Smaller Desktop */
