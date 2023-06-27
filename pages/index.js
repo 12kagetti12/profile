@@ -43,7 +43,7 @@ export default function Home() {
             alt="mainVisual"
             width={1920}
             height={1280}
-            sizes="(max-width:640px) 70vw,(max-width:1200px) 90vw,100vw"
+            sizes="(max-width:640px) 100vw,(max-width:1200px) 100vw,100vw"
             priority
           />
         </div>
