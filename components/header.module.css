@@ -34,9 +34,6 @@
   align-content: center;
 }
 
-
-
-
 /* =================================
   Object
 ================================= */
@@ -148,6 +145,32 @@
   font-size: 1.8rem;
   font-family: Arial, Helvetica, sans-serif;
   min-width: 30%;
+}
+
+.p_nav a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(10, 10, 10);
+}
+
+.p_nav a::after {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: rgb(10, 10, 10);
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+
+.p_nav a:hover::after {
+  bottom: -2px;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Utility -----------------------*/
