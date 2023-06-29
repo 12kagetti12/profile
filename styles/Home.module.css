@@ -2,6 +2,30 @@
   Layout
 ================================= */
 
+.l_xCenter_yCenter {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.l_xCenter_yColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.l_addMaxWidth_xCenter_yColumn {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.l_grid_x25rem_1fr {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 4rem 2rem;
+}
+
 /* =================================
   Object
 ================================= */
@@ -26,4 +50,28 @@
 		height: 100vh;
 		object-position: -45vw;
 	}
+}
+
+/* Project -----------------------*/
+
+.p_sectionTitleMargin {
+  margin: 0px 16px 40px;
+}
+
+.p_sectionTitleUnderline {
+  display: flex;
+  display: inline-block;
+  border-bottom: 2px solid rgb(10, 10, 10);
+  height: 56px;
+}
+
+.p_roundUpImage {
+  width: 100px;
+  height: 100px;
+  margin-right: 16px;
+  border-radius: 50%;
+}
+
+.p_contentTitleMargin {
+  margin: 0 0 0.5vh 0;
 }

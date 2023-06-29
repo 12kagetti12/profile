@@ -14,14 +14,14 @@ export default function Home() {
       id: 0,
       occupation: "DTP",
       media: "paper", 
-      imgSrc: "img/photo_coffee.jpg",
+      imgSrc: "/content_paper.jpg",
       text: "紙媒体のポートフォリをまとめています"
     },
     {
       id: 1,
       occupation : "web",
       media : "web", 
-      imgSrc : "img/photo_ diving.jpg", 
+      imgSrc : "/content_web.jpg", 
       text : "webブラウザのポートフォリをまとめています"
     }
   ]
@@ -48,13 +48,13 @@ export default function Home() {
           />
         </div>
 
-        <section className="l-addMaxWidth_x_center_y_column" id="area_profile">
-          <div className="l-x_center_y_column">
-            <h1 className="p-sectionTitle_margin p-sectionTitle_underline"> Profile</h1>
-            <div className="l-x_center_y_center">
-              <img className="p-roundUpImage" src="/profile_水玉模様.jpg" alt="プロフィール写真"/>
+        <section className={styles.l_addMaxWidth_xCenter_yColumn} id="area_profile">
+          <div className={styles.l_xCenter_yColumn}>
+            <h1 className={`${styles.p_sectionTitleMargin} ${styles.p_sectionTitleUnderline}`}> Profile</h1>
+            <div className={styles.l_xCenter_yCenter}>
+              <img className={styles.p_roundUpImage} src="/profile_水玉模様.jpg" alt="プロフィール写真"/>
               <div>
-                <h2 className="p-contentTitle_margin">SATOSHI KAGEYAMA</h2>
+                <h2 className={styles.p_contentTitleMargin}>SATOSHI KAGEYAMA</h2>
                 <p>マルチメディアデザイナー</p>
                 <p>小さいことの積み重ねが、とんでもないところに行くただひとつの道</p>
                 <p>明日が今日よりも良き日であるように、今 "　　" に何ができるのか？</p>
@@ -63,10 +63,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="l-addMaxWidth_x_center_y_column" id="area_work">
-          <div className="l-x_center_y_column">
-            <h1 className="p-sectionTitle_margin p-sectionTitle_underline">Work</h1>
-            <ul className="l-grid_x_25rem-1fr">
+        <section className={styles.l_addMaxWidth_xCenter_yColumn} id="area_work">
+          <div className={styles.l_xCenter_yColumn}>
+            <h1 className={`${styles.p_sectionTitleMargin} ${styles.p_sectionTitleUnderline}`}>Work</h1>
+            <ul className={styles.l_grid_x25rem_1fr}>
               {work.map((item) => (
                 <ContentCard
                   key = {item.id}
