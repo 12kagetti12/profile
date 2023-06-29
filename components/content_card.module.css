@@ -1,0 +1,38 @@
+/* =================================
+  Layout
+================================= */
+
+.l_xCenter_yColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =================================
+  Object
+================================= */
+
+/* Component ---------------------*/
+
+/* Project -----------------------*/
+.p_imageMargin {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2vh;
+}
+
+.p_contentTitleMargin {
+  margin: 0 0 0.5vh 0;
+}
+
+.p_capitalizeFirstString {
+  text-transform: capitalize;
+}
+
+/* Utility -----------------------*/
+
+
+/* Enable hover only on non-touch devices */
+
+
+/* Tablet and Smaller Desktop */

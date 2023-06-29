@@ -1,4 +1,5 @@
-import styles from '@/styles/Home.module.css'
+import styles from './content_card.module.css'
+import Image from 'next/image'
 
 export function ContentCard(props) {
   const src = props.imgSrc
@@ -7,9 +8,18 @@ export function ContentCard(props) {
   const imgTitle = props.media + ".img";
   return(
     <>
-      <li className="l-x_center_y_column">
-        <img className="p-image_margin" src={src} alt={imgTitle}/>
-        <h2 className="p-contentTitle_margin">{title}</h2>
+      <li className={styles.l_xCenter_yColumn}>
+        <a href="#">
+          <Image
+              className={styles.p_imageMargin}
+              src={src}
+              alt={imgTitle}
+              width={640}
+              height={424}
+              sizes="(max-width:640px) 80vw,(max-width:1200px) 40vw,25vw"
+          />
+        </a>
+        <h2 className={`${styles.p_contentTitleMargin} ${styles.p_capitalizeFirstString}`}>{title}</h2>
         <p>{text}</p>
       </li>
     </>
