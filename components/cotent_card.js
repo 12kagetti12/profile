@@ -9,7 +9,7 @@ export function ContentCard(props) {
   return(
     <>
       <li className={styles.l_xCenter_yColumn}>
-        <a href="#">
+        <a href="#" className={`${styles.l_xCenter_yColumn} ${styles.f_noStyles}`}>
           <Image
               className={styles.p_imageMargin}
               src={src}
@@ -18,8 +18,8 @@ export function ContentCard(props) {
               height={424}
               sizes="(max-width:640px) 80vw,(max-width:1200px) 40vw,25vw"
           />
+          <h2 className={`${styles.p_contentTitleMargin} ${styles.p_capitalizeFirstString}`}>{title}</h2>
         </a>
-        <h2 className={`${styles.p_contentTitleMargin} ${styles.p_capitalizeFirstString}`}>{title}</h2>
         <p>{text}</p>
       </li>
     </>
