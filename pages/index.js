@@ -56,7 +56,7 @@ export default function Home() {
               <div>
                 <h2 className={styles.p_contentTitleMargin}>SATOSHI KAGEYAMA</h2>
                 <p>マルチメディアデザイナー</p>
-                <p>小さいことの積み重ねが、とんでもないところに行くただひとつの道</p>
+                {/* <p>小さいことの積み重ねが、とんでもないところに行くただひとつの道</p> */}
                 <p>明日が今日よりも良き日であるように、今 "　　" に何ができるのか？</p>
               </div>
             </div>
