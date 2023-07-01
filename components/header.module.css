@@ -123,7 +123,7 @@
   }
 
   .c_media_navButton_line::before {
-    transform: translateX(-50%) translateY(-8px) ;
+    transform: translateX(-50%) translateY(-8px);
   }
 
   .c_media_navButton_line.open::before {
