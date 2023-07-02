@@ -8,23 +8,24 @@ import { ContentCard } from '@/components/cotent_card'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const WORK = [
+  {
+    id: 0,
+    occupation: "DTP",
+    media: "paper", 
+    imgSrc: "/content_paper.jpg",
+    text: "紙媒体のポートフォリをまとめています"
+  },
+  {
+    id: 1,
+    occupation : "web",
+    media : "web", 
+    imgSrc : "/content_web.jpg", 
+    text : "webブラウザのポートフォリをまとめています"
+  }
+]
+
 export default function Home() {
-  const work = [
-    {
-      id: 0,
-      occupation: "DTP",
-      media: "paper", 
-      imgSrc: "/content_paper.jpg",
-      text: "紙媒体のポートフォリをまとめています"
-    },
-    {
-      id: 1,
-      occupation : "web",
-      media : "web", 
-      imgSrc : "/content_web.jpg", 
-      text : "webブラウザのポートフォリをまとめています"
-    }
-  ]
 
   return (
     <>
@@ -67,9 +68,9 @@ export default function Home() {
           <div className={styles.l_xCenter_yColumn}>
             <h1 className={`${styles.p_sectionTitleMargin} ${styles.p_sectionTitleUnderline}`}>Work</h1>
             <ul className={styles.l_grid_x25rem_1fr}>
-              {work.map((item) => (
+              {WORK.map((item) => (
                 <ContentCard
-                  key = {item.id}
+                  key = {item.occupation}
                   imgSrc = {item.imgSrc}
                   media = {item.media}
                   text = {item.text}
