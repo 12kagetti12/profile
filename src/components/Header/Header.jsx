@@ -1,6 +1,10 @@
 import styles from '@/components/Header/Header.module.css';
 import Link from 'next/link';
 
+const handleOpenClose = (e) => {
+
+};
+
 export function Header(){
   return (
     <header id="header">
@@ -29,7 +33,7 @@ export function Header(){
           </nav>
         </div>
       </div>
-      <button className={styles.c_media_navButton}>
+      <button className={styles.c_media_navButton} onClick={handleOpenClose}>
         <span className={styles.c_media_navButton_line}></span>
         <span>menu</span>
       </button>
