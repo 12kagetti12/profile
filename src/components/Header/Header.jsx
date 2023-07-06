@@ -1,11 +1,14 @@
 import styles from '@/components/Header/Header.module.css';
 import Link from 'next/link';
-
-const handleOpenClose = (e) => {
-
-};
+import { useState } from 'react';
 
 export function Header(){
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleOpenClose = (e) => {
+    setMenuOpen((menuOpen) => !menuOpen);
+  };  
+
   return (
     <header id="header">
       <div className={styles.l_flexInlineTop}>
@@ -14,7 +17,7 @@ export function Header(){
             <a href="#area_top"><img className={`${styles.c_logo} ${styles.l_xCenter_yCenter}`} src="/logo.svg" alt="logo"/></a>
           </h1>
           <nav className={styles.p_nav}>
-            <ul className={styles.c_nav_noStyle} id="scroll_nav">
+            <ul className={`${styles.c_nav_noStyle} ${menuOpen ? styles.open : ""}`} id="scroll_nav">
               <li className={`${styles.c_nav_xRight} ${styles.c_mediaOnly}`}>
                 <a href="#area_top">Top</a>
               </li>
@@ -33,8 +36,8 @@ export function Header(){
           </nav>
         </div>
       </div>
-      <button className={styles.c_media_navButton} onClick={handleOpenClose}>
-        <span className={styles.c_media_navButton_line}></span>
+      <button className={`${styles.c_media_navButton} ${menuOpen ? styles.open : ""}`} onClick={handleOpenClose}>
+        <span className={`${styles.c_media_navButton_line} ${menuOpen ? styles.open : ""}`}></span>
         <span>menu</span>
       </button>
     </header>
