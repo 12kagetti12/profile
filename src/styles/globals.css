@@ -7,9 +7,10 @@
   margin: 0;
 }
 
-html {
+html, body {
   font-size: 62.5%;
   color: #333;
+  scroll-behavior: smooth;
 }
 
 h1 {

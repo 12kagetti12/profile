@@ -14,21 +14,29 @@ export function Header(){
       <div className={styles.l_flexInlineTop}>
         <div className={`${styles.l_addMargin} ${styles.l_addMaxWidth_xCenter_yColumn} ${styles.l_xAlignSide_yCenter}`}>
           <h1 className={styles.c_logo}>
-            <a href="#area_top"><img className={`${styles.c_logo} ${styles.l_xCenter_yCenter}`} src="/logo.svg" alt="logo"/></a>
+            <Link href="#areaTop" scroll={false}>
+              <img className={`${styles.c_logo} ${styles.l_xCenter_yCenter}`} src="/logo.svg" alt="logo"/>
+            </Link>
           </h1>
           <nav className={styles.p_nav}>
             <ul className={`${styles.c_nav_noStyle} ${menuOpen ? styles.open : ""}`} id="scroll_nav">
               <li className={`${styles.c_nav_xRight} ${styles.c_mediaOnly}`}>
-                <a href="#area_top">Top</a>
+                <Link href="#areaTop" scroll={false}>
+                  Top
+                </Link>
               </li>
               <li className={styles.c_nav_xRight}>
-                <a href="#area_profile">Profile</a>
+                <Link href="/#areaProfile" scroll={false}>
+                  Profile
+                </Link>
               </li>
               <li className={styles.c_nav_xRight}>
-                <a href="#area_favorite">Work</a>
+                <Link href="/#areaWork" scroll={false}>
+                  Work
+                </Link>
               </li>
               <li className={styles.c_nav_xRight}>
-                <Link href="#">
+                <Link href="/about">
                   Contact
                 </Link>
               </li>

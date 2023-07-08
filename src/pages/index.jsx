@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import { Header } from '@/components/Header/Header'
-import { Footer } from '@/components/Footer/Footer'
-import { ContentCard } from '@/components/ContentCard/CotentCard'
+import Head from 'next/head';
+import Image from 'next/image';
+import { Inter } from 'next/font/google';
+import styles from '@/styles/Home.module.css';
+import { Header } from '@/components/Header/Header';
+import { Footer } from '@/components/Footer/Footer';
+import { ContentCard } from '@/components/ContentCard/CotentCard';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -34,7 +34,7 @@ export default function Home() {
       </Head>
       <Header/>
       <main className="">
-        <div className={styles.c_mainVisual} id="area_top">
+        <div className={styles.c_mainVisual} id="areaTop">
           <Image
             className={styles.c_responsive}
             src="/mainvisual_seaClouds.jpg"
@@ -46,7 +46,7 @@ export default function Home() {
           />
         </div>
 
-        <section className={styles.l_addMaxWidth_xCenter_yColumn} id="area_profile">
+        <section className={styles.l_addMaxWidth_xCenter_yColumn} id="areaProfile">
           <div className={styles.l_xCenter_yColumn}>
             <h1 className={`${styles.p_sectionTitleMargin} ${styles.p_sectionTitleUnderline}`}> Profile</h1>
             <div className={styles.l_xCenter_yCenter}>
@@ -61,7 +61,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.l_addMaxWidth_xCenter_yColumn} id="area_work">
+        <section className={styles.l_addMaxWidth_xCenter_yColumn} id="areaWork">
           <div className={styles.l_xCenter_yColumn}>
             <h1 className={`${styles.p_sectionTitleMargin} ${styles.p_sectionTitleUnderline}`}>Work</h1>
             <ul className={styles.l_grid_x25rem_1fr}>
