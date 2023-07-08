@@ -36,7 +36,7 @@ export function Header(){
                 </Link>
               </li>
               <li className={styles.c_nav_xRight}>
-                <Link href="/about">
+                <Link href="/contact">
                   Contact
                 </Link>
               </li>

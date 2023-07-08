@@ -3,14 +3,14 @@ import { Header } from '@/components/Header/Header';
 import { Footer } from '@/components/Footer/Footer';
 import styles from '@/styles/Home.module.css';
 
-export default function About() {
+export default function Contact() {
   return (
     <>
       <Head>
-        <title>Cntact</title>
+        <title>Contact</title>
       </Head>
       <Header/>
-      <div  id="areaTop">
+      <div id="areaTop">
         <h1>Hello world</h1>
       </div>
       <Footer />
