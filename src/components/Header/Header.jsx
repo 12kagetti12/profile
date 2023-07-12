@@ -1,13 +1,13 @@
 import styles from '@/components/Header/Header.module.css';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export function Header(){
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleOpenClose = (e) => {
     setMenuOpen((menuOpen) => !menuOpen);
-  };  
+  };
 
   return (
     <header id="header">
@@ -46,7 +46,7 @@ export function Header(){
       </div>
       <button className={`${styles.c_media_navButton} ${menuOpen ? styles.open : ""}`} onClick={handleOpenClose}>
         <span className={`${styles.c_media_navButton_line} ${menuOpen ? styles.open : ""}`}></span>
-        <span>menu</span>
+        <span className={styles.c_mediaOnly}>menu</span>
       </button>
     </header>
   );
