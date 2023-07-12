@@ -1,6 +1,6 @@
 import styles from '@/components/Header/Header.module.css';
 import Link from 'next/link';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
 export function Header(){
   const [menuOpen, setMenuOpen] = useState(false);
