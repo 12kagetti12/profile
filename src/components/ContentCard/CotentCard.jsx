@@ -1,5 +1,6 @@
-import styles from "@/components/ContentCard/ContentCard.module.css"
-import Image from "next/image"
+import styles from "@/components/ContentCard/ContentCard.module.css";
+import Image from "next/image";
+import Link from "next/link";
 
 export function ContentCard(props) {
   const src = props.imgSrc
@@ -8,17 +9,17 @@ export function ContentCard(props) {
   const imgTitle = props.media + ".img";
   return(
     <li className={styles.l_xCenter_yColumn}>
-      <a href="#" className={`${styles.l_xCenter_yColumn} ${styles.f_noStyles}`}>
+      <Link href="/#areaTop" className={`${styles.l_xCenter_yColumn} ${styles.f_noStyles}`}>
         <Image
-            className={styles.p_imageMargin}
-            src={src}
-            alt={imgTitle}
-            width={640}
-            height={424}
-            sizes="(max-width:640px) 80vw,(max-width:1200px) 40vw,25vw"
+          className={styles.p_imageMargin}
+          src={src}
+          alt={imgTitle}
+          width={640}
+          height={424}
+          sizes="(max-width:640px) 80vw,(max-width:1200px) 40vw,25vw"
         />
         <h2 className={`${styles.p_contentTitleMargin} ${styles.p_capitalizeFirstString}`}>{title}</h2>
-      </a>
+      </Link>
       <p>{text}</p>
     </li>
   );
