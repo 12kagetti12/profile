@@ -27,7 +27,7 @@ export function Header(){
                 </Link>
               </li>
               <li className={styles.c_nav_xRight}>
-                <Link href="/#areaProfile" scroll={false}  >
+                <Link href="/#areaProfile" scroll={false}>
                   Profile
                 </Link>
               </li>
