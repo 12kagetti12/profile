@@ -1,16 +1,17 @@
-import styles from '@/components/Header/Header.module.css';
-import Link from 'next/link';
-import { useState } from 'react';
+import styles from "@/components/Header/Header.module.css";
+import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
+
+
 
 export function Header(){
   const [menuOpen, setMenuOpen] = useState(false);
-
   const handleOpenClose = (e) => {
     setMenuOpen((menuOpen) => !menuOpen);
   };
 
   return (
-    <header id="header">
+    <header>
       <div className={styles.l_flexInlineTop}>
         <div className={`${styles.l_addMargin} ${styles.l_addMaxWidth_xCenter_yColumn} ${styles.l_xAlignSide_yCenter}`}>
           <h1 className={styles.c_logo}>
@@ -26,7 +27,7 @@ export function Header(){
                 </Link>
               </li>
               <li className={styles.c_nav_xRight}>
-                <Link href="/#areaProfile" scroll={false}>
+                <Link href="/#areaProfile" scroll={false}  >
                   Profile
                 </Link>
               </li>

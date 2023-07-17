@@ -1,5 +1,5 @@
-import styles from '@/components/ContentCard/ContentCard.module.css'
-import Image from 'next/image'
+import styles from "@/components/ContentCard/ContentCard.module.css"
+import Image from "next/image"
 
 export function ContentCard(props) {
   const src = props.imgSrc
