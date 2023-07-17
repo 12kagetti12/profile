@@ -1,8 +1,6 @@
 import styles from "@/components/Header/Header.module.css";
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
-
-
+import { useState } from "react";
 
 export function Header(){
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +19,7 @@ export function Header(){
           </h1>
           <nav className={styles.p_nav}>
             <ul className={`${styles.c_nav_noStyle} ${menuOpen ? styles.open : ""}`} id="scroll_nav">
-              <li className={`${styles.c_nav_xRight} ${styles.c_mediaOnly}`}>
+              <li className={`${styles.c_nav_xRight} ${styles.c_mediaOnly} ${styles.hoverA}`}>
                 <Link href="#areaTop" scroll={false}>
                   Top
                 </Link>
@@ -44,11 +42,11 @@ export function Header(){
             </ul>
           </nav>
         </div>
-      </div>
-      <button className={`${styles.c_media_navButton} ${menuOpen ? styles.open : ""}`} onClick={handleOpenClose}>
+        <button className={`${styles.c_media_navButton} ${menuOpen ? styles.open : ""}`} onClick={handleOpenClose}>
         <span className={`${styles.c_media_navButton_line} ${menuOpen ? styles.open : ""}`}></span>
         <span className={styles.c_mediaOnly}>menu</span>
-      </button>
+        </button>
+      </div>
     </header>
   );
 }
