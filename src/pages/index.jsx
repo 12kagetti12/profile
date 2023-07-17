@@ -32,9 +32,9 @@ export default function Home() {
       <Head>
         <title>Sstoshi's Portfolio</title>
       </Head>
-      <Header/>
-      <main className="">
-        <div className={styles.c_mainVisual} id="areaTop">
+      <main id="areaTop">
+        <Header/>
+        <div className={styles.c_mainVisual}>
           <Image
             className={styles.c_responsive}
             src="/mainvisual_seaClouds.jpg"
