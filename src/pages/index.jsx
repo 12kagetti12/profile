@@ -41,14 +41,14 @@ export default function Home() {
             alt="mainVisual"
             width={1920}
             height={1280}
-            sizes="(max-width:640px) 100vw,(max-width:1200px) 100vw,100vw"
+            sizes="(max-width:640px) 100vh,(max-width:1200px) 100vh,100vh"
             priority
           />
         </div>
 
         <section className={styles.l_addMaxWidth_xCenter_yColumn} id="areaProfile">
           <div className={styles.l_xCenter_yColumn}>
-            <h1 className={`${styles.p_sectionTitleMargin} ${styles.p_sectionTitleUnderline}`}> Profile</h1>
+            <h1 className={styles.p_sectionTitleMargin}>Profile</h1>
             <div className={styles.l_xCenter_yCenter}>
               <img className={styles.p_roundUpImage} src="/profile_水玉模様.jpg" alt="プロフィール写真"/>
               <div>
@@ -63,7 +63,7 @@ export default function Home() {
 
         <section className={styles.l_addMaxWidth_xCenter_yColumn} id="areaWork">
           <div className={styles.l_xCenter_yColumn}>
-            <h1 className={`${styles.p_sectionTitleMargin} ${styles.p_sectionTitleUnderline}`}>Work</h1>
+            <h1 className={styles.p_sectionTitleMargin}>Work</h1>
             <ul className={styles.l_grid_x25rem_1fr}>
               {WORK.map((item) => (
                 <ContentCard

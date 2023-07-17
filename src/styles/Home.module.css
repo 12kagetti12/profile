@@ -35,8 +35,8 @@
 .c_mainVisual {
   max-width: 1920px;
   margin: 0 auto;
-  margin-top: 7vh;
-  padding-bottom: 20vh;
+  margin-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 .c_responsive {
@@ -48,14 +48,13 @@
   .c_responsive {
 		object-fit: cover;
 		height: 100vh;
-		object-position: -45vw;
 	}
 }
 
 /* Project -----------------------*/
 
 .p_sectionTitleMargin {
-  margin: 0px 16px 40px;
+  margin: 0px 16px 24px;
 }
 
 .p_sectionTitleUnderline {
