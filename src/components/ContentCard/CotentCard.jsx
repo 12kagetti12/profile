@@ -17,6 +17,8 @@ export function ContentCard(props) {
           width={640}
           height={424}
           sizes="(max-width:640px) 80vw,(max-width:1200px) 40vw,25vw"
+          as="image"
+          priority
         />
         <h2 className={`${styles.p_contentTitleMargin} ${styles.p_capitalizeFirstString}`}>{title}</h2>
       </Link>
