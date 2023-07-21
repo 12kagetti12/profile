@@ -5,7 +5,7 @@ import { useState } from "react";
 export function Header(){
   const [menuOpen, setMenuOpen] = useState(false);
   const handleOpenClose = (e) => {
-    setMenuOpen((menuOpen) => !menuOpen);
+    setMenuOpen((prevmenuOpen) => !prevmenuOpen);
   };
 
   return (
