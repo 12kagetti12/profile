@@ -5,8 +5,6 @@ import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { ContentCard } from "@/components/ContentCard/CotentCard";
 
-const inter = Inter({ subsets: ["latin"] })
-
 const WORK = [
   {
     id: 0,
