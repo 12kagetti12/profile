@@ -4,8 +4,8 @@ import { useState } from "react";
 
 export function Header(){
   const [menuOpen, setMenuOpen] = useState(false);
-  const handleOpenClose = (e) => {
-    setMenuOpen((prevmenuOpen) => !prevmenuOpen);
+  const handleOpenClose = () => {
+      setMenuOpen((prevmenuOpen) => !prevmenuOpen);
   };
 
   return (
@@ -20,22 +20,22 @@ export function Header(){
           <nav className={styles.p_nav}>
             <ul className={`${styles.c_nav_noStyle} ${menuOpen ? styles.open : ""}`} id="scroll_nav">
               <li className={`${styles.c_nav_xRight} ${styles.c_mediaOnly} ${styles.hoverA}`}>
-                <Link href="#areaTop" scroll={false}>
+                <Link href="#areaTop" scroll={false} onClick={handleOpenClose}>
                   Top
                 </Link>
               </li>
               <li className={styles.c_nav_xRight}>
-                <Link href="/#areaProfile" scroll={false}>
+                <Link href="/#areaProfile" scroll={false} onClick={handleOpenClose}>
                   Profile
                 </Link>
               </li>
               <li className={styles.c_nav_xRight}>
-                <Link href="/#areaWork" scroll={false}>
+                <Link href="/#areaWork" scroll={false} onClick={handleOpenClose}>
                   Work
                 </Link>
               </li>
               <li className={styles.c_nav_xRight}>
-                <Link href="/contact">
+                <Link href="/contact" onClick={handleOpenClose}>
                   Contact
                 </Link>
               </li>
