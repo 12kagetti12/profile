@@ -10,9 +10,12 @@ export default function Contact() {
         <title>Contact</title>
       </Head>
       <Header/>
-      <div id="areaTop">
-        <h1>Hello world</h1>
-      </div>
+
+      <section className={styles.l_addMaxWidth_xCenter_yColumn} id="areaTop">
+        <div className={styles.l_xCenter_yColumn}>
+          <h1>公開準備中</h1>
+        </div>
+      </section>
       <Footer />
     </>
   );
