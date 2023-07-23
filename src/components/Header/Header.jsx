@@ -5,7 +5,9 @@ import { useState } from "react";
 export function Header(){
   const [menuOpen, setMenuOpen] = useState(false);
   const handleOpenClose = () => {
+    if (window.matchMedia( "(max-width: 640px)" ).matches) {
       setMenuOpen((prevmenuOpen) => !prevmenuOpen);
+    }
   };
 
   return (
