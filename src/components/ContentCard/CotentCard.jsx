@@ -7,9 +7,10 @@ export function ContentCard(props) {
   const title = props.media;
   const text = props.text;
   const imgTitle = props.media + ".img";
+  const contentUrl = "/" + props.media;
   return(
     <li className={styles.l_xCenter_yColumn}>
-      <Link href="/#areaTop" className={`${styles.l_xCenter_yColumn} ${styles.f_noStyles}`}>
+      <Link href={contentUrl} className={`${styles.l_xCenter_yColumn} ${styles.f_noStyles}`}>
         <Image
           className={styles.p_imageMargin}
           src={src}
