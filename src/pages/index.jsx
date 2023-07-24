@@ -47,7 +47,15 @@ export default function Home() {
           <div className={styles.l_xCenter_yColumn}>
             <h1 className={styles.p_sectionTitleMargin}>Profile</h1>
             <div className={styles.l_xCenter_yCenter}>
-              <img className={styles.p_roundUpImage} src="/profile_水玉模様.jpg" alt="プロフィール写真"/>
+              <Image
+                className={styles.p_roundUpImage} 
+                src="/profile_polkaDot.jpg" 
+                alt="プロフィール写真"
+                width={100}
+                height={100}
+                sizes="(max-width:640px) 100vh,(max-width:1200px) 100vh,100vh"
+                priority
+              />
               <div>
                 <h2 className={styles.p_contentTitleMargin}>SATOSHI KAGEYAMA</h2>
                 <p>マルチメディアデザイナー</p>
