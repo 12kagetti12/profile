@@ -39,7 +39,6 @@ export default function Home() {
             width={1920}
             height={1280}
             sizes="(max-width:640px) 100vh,(max-width:1200px) 100vh,100vh"
-            as="image"
             priority
           />
         </div>
