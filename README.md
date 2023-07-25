@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Name
 profile
 
@@ -49,3 +50,6 @@ Satoshi Kageyama
 Satoshi Kageyama
 
 # satoshi-study
+=======
+# profile
+>>>>>>> 9deafbe2ab1fbd3fd73068425c85e0955ef198a7
