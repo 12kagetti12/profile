@@ -2,7 +2,7 @@
 profile
 
 # DEMO
-https://12kagetti12.github.io/profile/#
+https://profile-r3ojq00xn-12kagetti12.vercel.app/
 
 # Features
 Introducing myself and my portfolio.
