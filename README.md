@@ -1,51 +1,83 @@
 # Name
+
 profile
 
 # DEMO
+
 https://profile-r3ojq00xn-12kagetti12.vercel.app/
 
 # Features
+
 Introducing myself and my portfolio.
 
 # Requirement
-* next : "13.4.6"
-* react : "18.2.0"
-* react-dom : "18.2.0"
+
+- next : "13.4.6"
+- react : "18.2.0"
+- react-dom : "18.2.0"
+- tailwindcss : "^3.3.3"
 
 # Installation
+
 ## Framework
+
 ```
 npx create-next-app@latest
+```
+
+## prettier-plugin-tailwindcss
+
+```
+npm install -D prettier prettier-plugin-tailwindcss
+```
+
+Then add the plugin to your Prettier config
+
+```
+// prettier.config.js
+module.exports = {
+  plugins: ['prettier-plugin-tailwindcss'],
+}
 ```
 
 # Usage
 
 # Note
+
 ## Reference CSS naming convention
-* FLOCSS
+
+- FLOCSS
+
 ### Structure
-* Foundation : Mainly describes css reset and site-wide settings
-* Layout : Placement of components and objects
-* Object
-  * Component : Styles that can be reused regardless of the project
-  * Project : About project-specific styles
-  * Utility : Temporary styles used in the project
+
+- Foundation : Mainly describes css reset and site-wide settings
+- Layout : Placement of components and objects
+- Object
+  - Component : Styles that can be reused regardless of the project
+  - Project : About project-specific styles
+  - Utility : Temporary styles used in the project
+
 ### Common prefixes and symbols
-* Prefixes
-  * "f" : Function
-  * "l" : Layout
-  * "c" : Component
-  * "p" : Project
-  * "u" : Utility
-* Symbols
-  * "_" : Separate blocks, elements and modifiers
+
+- Prefixes
+  - "f" : Function
+  - "l" : Layout
+  - "c" : Component
+  - "p" : Project
+  - "u" : Utility
+- Symbols
+  - "\_" : Separate blocks, elements and modifiers
+
 ### Others
-* Use camel case 
+
+- Use camel case
 
 # Author
+
 Satoshi Kageyama
 
 # License
+
 Satoshi Kageyama
 
 #### profile
