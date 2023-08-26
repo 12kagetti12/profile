@@ -46,7 +46,7 @@ module.exports = {
 
 ## List of custom components
 
-- hoverUnderLine01
+- hoverUnderLine01:
   Animation that displays the underline while fading in from top to bottom when hovering the string
 
 ### Structure
