@@ -4,7 +4,7 @@ profile
 
 # DEMO
 
-https://profile-r3ojq00xn-12kagetti12.vercel.app/
+https://profile-pvx94gwc5-12kagetti12.vercel.app/
 
 # Features
 
@@ -44,9 +44,10 @@ module.exports = {
 
 # Note
 
-## Reference CSS naming convention
+## List of custom components
 
-- FLOCSS
+- hoverUnderLine01
+  Animation that displays the underline while fading in from top to bottom when hovering the string
 
 ### Structure
 
