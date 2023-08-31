@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Header } from "@/components/Header/Header";
-import { Footer } from "@/components/Footer/Footer";
-import { ContentCard } from "@/components/ContentCard/CotentCard";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { ContentCard } from "@/components/ContentCard";
 
 type WORK = {
   id: number;
