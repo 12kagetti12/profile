@@ -4,7 +4,15 @@ import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { ContentCard } from "@/components/ContentCard/CotentCard";
 
-const WORK = [
+type WORK = {
+  id: number;
+  occupation: string;
+  media: string;
+  imgSrc: string;
+  text: string;
+};
+
+const WORKS: WORK[] = [
   {
     id: 0,
     occupation: "DTP",
@@ -79,7 +87,7 @@ export default function Home() {
           <div className="flex flex-col items-center">
             <h1 className="mx-4 mb-6">Work</h1>
             <ul className="grid w-full auto-cols-auto gap-x-8 gap-y-16 sm:grid-cols-2">
-              {WORK.map((item) => (
+              {WORKS.map((item: WORK) => (
                 <ContentCard
                   key={item.occupation}
                   imgSrc={item.imgSrc}

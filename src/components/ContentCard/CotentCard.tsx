@@ -1,12 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export function ContentCard(props) {
-  const src = props.imgSrc;
-  const title = props.media;
-  const text = props.text;
-  const imgTitle = props.media + ".img";
-  const contentUrl = "/" + props.media;
+type Props = {
+  imgSrc: string;
+  media: string;
+  text: string;
+};
+
+export function ContentCard({ imgSrc, media, text }: Props) {
+  const srcUrl: string = imgSrc;
+  const title: string = media;
+  const contentUrl = "/" + media;
   return (
     <li className="flex flex-col items-center justify-end leading-none">
       <Link
@@ -15,8 +19,8 @@ export function ContentCard(props) {
       >
         <Image
           className="h-auto max-w-full"
-          src={src}
-          alt={imgTitle}
+          src={srcUrl}
+          alt={media + "Img"}
           width={640}
           height={424}
           sizes="(max-width:640px) 80vw,(max-width:1200px) 40vw,25vw"
