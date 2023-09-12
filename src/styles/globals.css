@@ -41,7 +41,7 @@ h2 {
 }
 
 p {
-  font-family: Arial, Helvetica, sans-serif, "Hiragino Sans";
+  font-family: Arial, Helvetica, "Hiragino Sans", sans-serif;
   font-size: 1rem;
 }
 
