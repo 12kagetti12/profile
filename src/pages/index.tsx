@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Header } from "@/components/Header";
+import Header from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContentCard } from "@/components/ContentCard";
 
@@ -37,10 +37,10 @@ export default function Home() {
       </Head>
       <main id="areaTop">
         <Header />
-        <div className="mx-0 pt-20 sm:max-w-screen-2xl">
+        <div className="mx-0 sm:max-w-screen-2xl">
           <Image
             className="h-screen object-cover sm:h-auto sm:max-w-full"
-            src="/mainvisual_seaClouds.jpg"
+            src="/mainVisual_seaClouds.jpg"
             alt="mainVisual"
             width={1920}
             height={1280}
