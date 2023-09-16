@@ -40,7 +40,7 @@ export default function Home() {
         <div className="mx-0 sm:max-w-full">
           <Image
             className="h-screen object-cover sm:h-auto sm:max-w-full"
-            src="/mainVisual_seaClouds.jpg"
+            src="/mainVisualSummer.jpg"
             alt="mainVisual"
             width={1920}
             height={1280}
