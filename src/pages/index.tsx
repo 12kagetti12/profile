@@ -37,7 +37,7 @@ export default function Home() {
       </Head>
       <main id="areaTop">
         <Header />
-        <div className="mx-0 sm:max-w-screen-2xl">
+        <div className="mx-0 sm:max-w-full">
           <Image
             className="h-screen object-cover sm:h-auto sm:max-w-full"
             src="/mainVisual_seaClouds.jpg"
