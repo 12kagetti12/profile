@@ -8,7 +8,7 @@ const nextConfig = {
         {
           loader: "@svgr/webpack",
           options: {
-            svgo: false, // 圧縮無効
+            svgo: false,
           },
         },
       ],
@@ -16,7 +16,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    disableStaticImages: true, // importした画像の型定義設定を無効にする
+    disableStaticImages: true,
   },
 };
 
