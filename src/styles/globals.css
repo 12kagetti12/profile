@@ -4,7 +4,7 @@
 
 @layer components {
   .hoverUnderLine01 {
-    @apply relative inline-block text-[#333333] no-underline;
+    @apply relative inline-block no-underline;
   }
   .hoverUnderLine01::after {
     @apply invisible absolute bottom-0.5 left-0 h-0.5 w-full bg-[#333333] bg-opacity-0 transition-all duration-300 content-[""];
