@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContentCard } from "@/components/ContentCard";
+import { useEffect, useState, useRef } from "react";
 
 type WORK = {
   id: number;
@@ -30,13 +31,55 @@ const WORKS: WORK[] = [
 ];
 
 export default function Home() {
+  type refPositions = {
+    topRefPosition: number;
+    profileRefPosition: number;
+    workRefPosition: number;
+    contactRefPosition: number;
+  };
+
+  const [refPositions, setRefPositions] = useState({
+    topRefPosition: 0,
+    profileRefPosition: 0,
+    workRefPosition: 0,
+    contactRefPosition: null,
+  });
+
+  const areaTopRef = useRef(null);
+  const areaProfileRef = useRef(null);
+  const areaWorkRef = useRef(null);
+  const contactRefPosition = null;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const startingRef: number =
+        areaTopRef.current.getBoundingClientRect().top;
+      const getAreaRefs = {
+        topRefPosition: startingRef,
+        profileRefPosition:
+          areaProfileRef.current.getBoundingClientRect().top - startingRef,
+        workRefPosition:
+          areaWorkRef.current.getBoundingClientRect().top - startingRef,
+        contactRefPosition: null,
+      };
+      setRefPositions(getAreaRefs);
+    };
+    window.addEventListener("load", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener("load", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Head>
         <title>Sstoshi's Portfolio</title>
       </Head>
-      <main id="areaTop">
-        <Header />
+      <Header refPositions={refPositions}></Header>
+      <main id="areaTop" ref={areaTopRef}>
         <div className="mx-0 sm:max-w-full">
           <Image
             className="h-screen object-cover sm:h-auto sm:max-w-full"
@@ -52,6 +95,7 @@ export default function Home() {
         <section
           className="pt-20 sm:mx-auto sm:max-w-screen-lg"
           id="areaProfile"
+          ref={areaProfileRef}
         >
           <div className="mx-4 flex flex-col items-center">
             <h1 className="mb-6">Profile</h1>
@@ -78,7 +122,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="pt-20 sm:mx-auto sm:max-w-screen-lg" id="areaWork">
+        <section
+          className="min-h-screen pt-20 sm:mx-auto sm:max-w-screen-lg"
+          id="areaWork"
+          ref={areaWorkRef}
+        >
           <div className="flex flex-col items-center">
             <h1 className="mx-4 mb-6">Work</h1>
             <ul className="grid w-full auto-cols-auto gap-x-8 gap-y-16 sm:grid-cols-2">
