@@ -1,6 +1,6 @@
 "#init";
 
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import Link from "next/link";
 import House_fill from "@/components/icons/House.svg";
 import Me_fill from "@/components/icons/Me_fill.svg";
@@ -47,20 +47,64 @@ const navIcons: Icon[] = [
   },
 ];
 
-const Header = () => {
-  const [navStatus, setNavStatus] = useState(navIcons);
+type RefProps = {
+  refPositions: {
+    topRefPosition: number;
+    profileRefPosition: number;
+    workRefPosition: number;
+    contactRefPosition: number;
+  };
+};
 
-  const handleClick = (id: number) => {
-    const prevNavStatus = navStatus.map((icon) => {
-      if (icon.id === id) {
-        icon.active = true;
-      } else {
-        icon.active = false;
-      }
+const Header: React.FC<RefProps> = ({ refPositions }) => {
+  const [scrollTop, setScrollTop] = useState(0);
+  const [navStatuses, setNavStatuses] = useState(navIcons);
+  const updateStatuses = (id: number) => {
+    const newNavStatus = navStatuses.map((icon) => {
+      icon.id === id ? (icon.active = true) : (icon.active = false);
       return icon;
     });
-    setNavStatus(prevNavStatus);
+    setNavStatuses(newNavStatus);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const newScrollTop = window.scrollY;
+      setScrollTop(newScrollTop);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (
+      scrollTop < refPositions.profileRefPosition &&
+      0 < refPositions.profileRefPosition
+    ) {
+      updateStatuses(0);
+    } else if (
+      refPositions.profileRefPosition <= scrollTop &&
+      scrollTop < refPositions.workRefPosition &&
+      0 < refPositions.profileRefPosition
+    ) {
+      updateStatuses(1);
+    } else if (
+      refPositions.workRefPosition <= scrollTop &&
+      0 < refPositions.workRefPosition
+    ) {
+      updateStatuses(2);
+    } else if (refPositions.contactRefPosition > 0) {
+      updateStatuses(3);
+    }
+  }, [scrollTop, refPositions]);
+
+  const handleClick = useCallback((id: number) => {
+    updateStatuses(id);
+  }, []);
 
   return (
     <header className="flex h-20 justify-center bg-white sm:fixed sm:w-full">
@@ -79,15 +123,19 @@ const Header = () => {
               <li
                 key={icon.id}
                 className={
-                  icon.text === "Home" ? "px-4 py-6 sm:hidden" : "px-4 py-6"
+                  icon.text === "Home"
+                    ? "relative px-4 py-6 sm:hidden"
+                    : "relative px-4 py-6"
                 }
-                onClick={() => handleClick(icon.id)}
+                onClick={(_e) => {
+                  handleClick(icon.id);
+                }}
               >
                 <Link
                   className={
                     icon.active
-                      ? "hoverUnderLine01 flex flex-col items-center fill-current text-[#393E46]"
-                      : "hoverUnderLine01 flex flex-col items-center fill-current text-[#ADB2BA]"
+                      ? "underLine01 sm:hoverUnderLine01 m-auto flex flex-col items-center justify-center fill-current text-[#393E46]"
+                      : "underLine01None sm:hoverUnderLine01 m-auto flex flex-col items-center justify-center fill-current text-[#ADB2BA]"
                   }
                   href={icon.sectionName}
                   scroll={false}
