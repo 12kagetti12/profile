@@ -78,8 +78,10 @@ export default function Home() {
       <Head>
         <title>Sstoshi's Portfolio</title>
       </Head>
-      <Header refPositions={refPositions}></Header>
-      <main id="areaTop" ref={areaTopRef}>
+      <div id="areaTop" ref={areaTopRef}>
+        <Header refPositions={refPositions}></Header>
+      </div>
+      <main>
         <div className="mx-0 sm:max-w-full">
           <Image
             className="h-screen object-cover sm:h-auto sm:max-w-full"
