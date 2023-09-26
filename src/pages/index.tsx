@@ -82,7 +82,7 @@ export default function Home() {
         <Header refPositions={refPositions}></Header>
       </div>
       <main>
-        <div className="mx-0 sm:max-w-full">
+        <div className="mx-0 pb-20 sm:max-w-full sm:pb-0">
           <Image
             className="h-screen object-cover sm:h-auto sm:max-w-full"
             src="/mainVisualSummer.jpg"
@@ -95,7 +95,7 @@ export default function Home() {
         </div>
 
         <section
-          className="pt-20 sm:mx-auto sm:max-w-screen-lg"
+          className="pb-20 sm:mx-auto sm:max-w-screen-lg sm:pb-0 sm:pt-20"
           id="areaProfile"
           ref={areaProfileRef}
         >
@@ -125,7 +125,7 @@ export default function Home() {
         </section>
 
         <section
-          className="min-h-screen pt-20 sm:mx-auto sm:max-w-screen-lg"
+          className="min-h-screen pb-20 sm:mx-auto sm:max-w-screen-lg sm:pb-0 sm:pt-20"
           id="areaWork"
           ref={areaWorkRef}
         >
