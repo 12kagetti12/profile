@@ -1,6 +1,6 @@
 "#init";
 
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import House_fill from "@/components/icons/House.svg";
 import Me_fill from "@/components/icons/Me_fill.svg";
@@ -69,7 +69,7 @@ const Header: React.FC<RefProps> = ({ refPositions }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const newScrollTop = window.scrollY;
+      const newScrollTop = window.scrollY + 5;
       setScrollTop(newScrollTop);
     };
 
@@ -102,21 +102,17 @@ const Header: React.FC<RefProps> = ({ refPositions }) => {
     }
   }, [scrollTop, refPositions]);
 
-  const handleClick = useCallback((id: number) => {
-    updateStatuses(id);
-  }, []);
-
   return (
     <header className="flex h-20 justify-center bg-white sm:fixed sm:w-full">
-      <div className="mx-4 flex w-full items-center  sm:max-w-5xl">
+      <div className="mx-4 flex w-full items-center sm:max-w-screen-lg">
         <h1 className="w-28">
           <Link href="/#areaTop" scroll={false}>
             <img className="w-fit" src="/logo.svg" alt="logo" />
           </Link>
         </h1>
-        <nav className="fixed bottom-0 left-0 h-20 w-full bg-white sm:static sm:flex sm:h-fit sm:max-w-5xl sm:bg-opacity-0">
+        <nav className="fixed bottom-0 left-0 flex h-20 w-full items-center bg-white sm:static sm:top-0 sm:h-fit sm:max-w-5xl sm:justify-end sm:bg-opacity-0">
           <ul
-            className="flex w-full justify-around sm:justify-end"
+            className="flex w-full items-center justify-around sm:justify-end"
             id="scroll_nav"
           >
             {navIcons.map((icon) => (
@@ -124,18 +120,15 @@ const Header: React.FC<RefProps> = ({ refPositions }) => {
                 key={icon.id}
                 className={
                   icon.text === "Home"
-                    ? "relative px-4 py-6 sm:hidden"
-                    : "relative px-4 py-6"
+                    ? "relative px-4 sm:hidden"
+                    : "relative px-4 sm:ml-8 sm:px-0"
                 }
-                onClick={(_e) => {
-                  handleClick(icon.id);
-                }}
               >
                 <Link
                   className={
                     icon.active
                       ? "underLine01 sm:hoverUnderLine01 m-auto flex flex-col items-center justify-center fill-current text-[#393E46]"
-                      : "underLine01None sm:hoverUnderLine01 m-auto flex flex-col items-center justify-center fill-current text-[#ADB2BA]"
+                      : "underLine01None sm:hoverUnderLine01 m-auto flex flex-col items-center justify-center fill-current text-[#ADB2BA] sm:justify-end"
                   }
                   href={icon.sectionName}
                   scroll={false}
