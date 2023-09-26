@@ -48,7 +48,7 @@ export default function Home() {
   const areaTopRef = useRef(null);
   const areaProfileRef = useRef(null);
   const areaWorkRef = useRef(null);
-  const contactRefPosition = null;
+  const contactRefPosition = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
