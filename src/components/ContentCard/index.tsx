@@ -12,7 +12,7 @@ export function ContentCard({ imgSrc, media, text }: Props) {
   const title: string = media;
   const contentUrl = "/" + media;
   return (
-    <li className="flex flex-col items-center justify-end leading-none">
+    <li className="flex flex-col items-center leading-none">
       <Link
         href={contentUrl}
         className="flex flex-col items-center no-underline"
