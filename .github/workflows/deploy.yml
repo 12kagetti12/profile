@@ -13,6 +13,7 @@ jobs:
       HOSTNAME: ${{ secrets.HOSTNAME }}
       USERNAME: ${{ secrets.USERNAME }}
       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      PORT: ${{ secrets.PORT }}
 
     steps:
       - name: Checkout code
@@ -31,6 +32,6 @@ jobs:
 
       - name: Deploy to production
         run: |
-          scp -r ./build/* ${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:/path/to/remote/directory
+          scp -P ${{ secrets.PORT }} -r ./build/* ${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:/path/to/remote/directory
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
