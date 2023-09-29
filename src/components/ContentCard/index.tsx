@@ -17,14 +17,14 @@ export function ContentCard({ imgSrc, media, text }: Props) {
         href={contentUrl}
         className="flex flex-col items-center no-underline"
       >
-        <Image
+        <img
           className="h-auto max-w-full"
           src={srcUrl}
           alt={media + "Img"}
           width={640}
           height={424}
           sizes="(max-width:640px) 80vw,(max-width:1200px) 40vw,25vw"
-          priority
+          // priority
         />
       </Link>
       <Link href={contentUrl} className="no-underline">

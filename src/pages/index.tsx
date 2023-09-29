@@ -83,14 +83,14 @@ export default function Home() {
       </div>
       <main>
         <div className="mx-0 mb-20 sm:mb-0 sm:max-w-full">
-          <Image
+          <img
             className="h-screen object-cover sm:h-auto sm:max-w-full"
             src="/mainVisualSummer.jpg"
             alt="mainVisual"
             width={1920}
             height={1280}
             sizes="(max-width:640px) 100vh,(max-width:1200px) 100vh,100vh"
-            priority={true}
+            // priority={true}
           />
         </div>
 
@@ -102,7 +102,7 @@ export default function Home() {
           <div className="mx-4 flex flex-col items-center">
             <h1 className="mb-6">Profile</h1>
             <div className="flex items-start justify-center">
-              <Image
+              <img
                 className="mr-4 h-24 w-24 rounded-full"
                 src="/profile_polkaDot.jpg"
                 alt="プロフィール写真"
