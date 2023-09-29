@@ -37,7 +37,6 @@ jobs:
           server: $HOSTNAME
           username: $USERNAME
           password: $SSH_PRIVATE_KEY
-          port: $PORT
           local-dir: ./out/
           server-dir: $FULLPATH
           protocol: ftps
