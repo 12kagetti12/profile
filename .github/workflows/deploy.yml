@@ -10,10 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      HOSTNAME: ${{ secrets.HOSTNAME }}
-      USERNAME: ${{ secrets.USERNAME }}
-      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      PORT: ${{ secrets.PORT }}
+      HOSTNAME: ${{ secrets.FTP_HOSTNAME }}
+      USERNAME: ${{ secrets.FTP_USERNAME }}
+      PASSWORD: ${{ secrets.FTP_PASSWORD }}
       FULLPATH: ${{ secrets.FULLPATH }}
 
     steps:
@@ -36,7 +35,7 @@ jobs:
         with:
           server: $HOSTNAME
           username: $USERNAME
-          password: $SSH_PRIVATE_KEY
+          password: $PASSWORD
           local-dir: ./out/
           server-dir: $FULLPATH
           protocol: ftps
