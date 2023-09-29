@@ -37,5 +37,4 @@ jobs:
           username: $USERNAME
           password: $PASSWORD
           local-dir: ./out/
-          server-dir: $FULLPATH
           protocol: ftps
