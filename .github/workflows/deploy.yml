@@ -39,6 +39,6 @@ jobs:
           server: ${{ secrets.FTP_HOSTNAME }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: _next/
-          server-dir: ${{ secrets.FULLPATH }}/
+          local-dir: ./out/
+          server-dir: /
           protocol: ftps
