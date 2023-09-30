@@ -40,4 +40,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
+          git-ftp-args: --remote-root ${{ secrets.FULLPATH }}
           protocol: ftps
