@@ -27,11 +27,12 @@ jobs:
       - name: Export Next.js App
         run: npm run export
 
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: SSH Deploy
+        uses: SamKirkland/web-deploy@v1
         with:
-          server: ${{ secrets.FTP_HOSTNAME }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          target-server: ${{ secrets.SSH_HOST }}
+          remote-user: ${{ secrets.SSH_USERNAME }}
+          private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
           local-dir: ./out/
-          server-dir: ${{ secrets.FTP_PATH }}/
+          destination-path: ${{ secrets.FULLPATH }}/
+          ssh-port: ${{ secrets.SSH_PORT}}
