@@ -34,4 +34,4 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PRIVATE_KEY }}
           local-dir: ./out/
-          server-dir: ${{ secrets.FULLPATH }}
+          server-dir: ${{ secrets.FULLPATH }}/
