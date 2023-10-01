@@ -35,3 +35,4 @@ jobs:
           password: ${{ secrets.SSH_PRIVATE_KEY }}
           local-dir: ./out/
           server-dir: ${{ secrets.FULLPATH }}/
+          port: ${{ secrets.SSH_SSH_PORT }}
