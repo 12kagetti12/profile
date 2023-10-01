@@ -31,8 +31,8 @@ jobs:
         uses: SamKirkland/web-deploy@v1
         with:
           target-server: ${{ secrets.SSH_HOST }}
-          destination-path: ${{ secrets.DESTINATION_PATH}}/
+          destination-path: ${{ secrets.FULLPATH}}/
           remote-user: ${{ secrets.SSH_USERNAME }}
           private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source-path: ${{ secrets.FULLPATH }}/
+          source-path: ${{ secrets.DESTINATION_PATH }}/
           ssh-port: ${{ secrets.SSH_PORT}}
