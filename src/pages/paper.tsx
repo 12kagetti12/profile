@@ -2,8 +2,27 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useState, useRef, useEffect } from "react";
+import { PaperContentCard } from "@/components/PaperContentCard";
 
-export default function Pater() {
+type PaperJob = {
+  id: number;
+  occupation: string;
+  media: string;
+  imgSrc: string;
+  text: string;
+};
+
+const paperJobs: PaperJob[] = [
+  {
+    id: 0,
+    occupation: "DTP",
+    media: "paper",
+    imgSrc: "string",
+    text: "仕事名",
+  },
+];
+
+export default function Paper() {
   type refPositions = {
     topRefPosition: number;
     profileRefPosition: number;
@@ -59,6 +78,19 @@ export default function Pater() {
           <div className="flex flex-col items-center">
             <h1>公開準備中</h1>
           </div>
+        </section>
+        <section>
+          <h1>Paper-print-</h1>
+          <ul>
+            {paperJobs.map((item: PaperJob) => (
+              <PaperContentCard
+                key={item.id}
+                imgSrc={item.imgSrc}
+                media={item.media}
+                text={item.text}
+              />
+            ))}
+          </ul>
         </section>
       </main>
       <Footer />
