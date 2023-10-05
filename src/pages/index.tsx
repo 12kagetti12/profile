@@ -100,7 +100,7 @@ export default function Home() {
           ref={areaProfileRef}
         >
           <div className="mx-4 flex flex-col items-center">
-            <h1 className="mb-6">Profile</h1>
+            <h1 className="mb-6 capitalize">Profile</h1>
             <div className="flex items-start justify-center">
               <img
                 className="mr-4 h-24 w-24 rounded-full"
@@ -130,7 +130,7 @@ export default function Home() {
           ref={areaWorkRef}
         >
           <div className="flex flex-col items-center">
-            <h1 className="mx-4 mb-6">Work</h1>
+            <h1 className="mx-4 mb-6 capitalize">Work</h1>
             <ul className="grid w-full auto-cols-auto gap-x-8 gap-y-16 sm:grid-cols-2">
               {WORKS.map((item: WORK) => (
                 <ContentCard

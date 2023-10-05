@@ -28,7 +28,7 @@ export function ContentCard({ imgSrc, media, text }: Props) {
         />
       </Link>
       <Link href={contentUrl} className="no-underline">
-        <h2 className="sm:hoverUnderLine01 pb-0.5">{title}</h2>
+        <h2 className="sm:hoverUnderLine01 pb-0.5 capitalize">{title}</h2>
       </Link>
       <p className="pt-4">{text}</p>
     </li>

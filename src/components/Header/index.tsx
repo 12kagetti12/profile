@@ -20,28 +20,28 @@ const navIcons: Icon[] = [
   {
     id: 0,
     iconSvg: House_fill,
-    text: "Home",
+    text: "home",
     sectionName: "/#areaTop",
     active: true,
   },
   {
     id: 1,
     iconSvg: Me_fill,
-    text: "Profile",
+    text: "profile",
     sectionName: "/#areaProfile",
     active: false,
   },
   {
     id: 2,
     iconSvg: Work,
-    text: "Work",
+    text: "work",
     sectionName: "/#areaWork",
     active: false,
   },
   {
     id: 3,
     iconSvg: Mail,
-    text: "Contact",
+    text: "contact",
     sectionName: "/contact",
     active: false,
   },
@@ -110,7 +110,7 @@ const Header: React.FC<RefProps> = ({ refPositions }) => {
             <img className="w-fit" src="/logo.svg" alt="logo" />
           </Link>
         </h1>
-        <nav className="fixed bottom-0 left-0 flex h-20 w-full items-center bg-white sm:static sm:top-0 sm:h-fit sm:max-w-5xl sm:justify-end sm:bg-opacity-0">
+        <nav className="fixed bottom-0 left-0 z-10 flex h-20 w-full items-center bg-white sm:static sm:top-0 sm:h-fit sm:max-w-5xl sm:justify-end sm:bg-opacity-0">
           <ul
             className="flex w-full items-center justify-around sm:justify-end"
             id="scroll_nav"
@@ -134,7 +134,7 @@ const Header: React.FC<RefProps> = ({ refPositions }) => {
                   scroll={false}
                 >
                   <icon.iconSvg />
-                  <p className="text-xs">{icon.text}</p>
+                  <p className="text-xs capitalize">{icon.text}</p>
                 </Link>
               </li>
             ))}
