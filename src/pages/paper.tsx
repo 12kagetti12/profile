@@ -16,8 +16,29 @@ const paperJobs: PaperJob[] = [
   {
     id: 0,
     occupation: "DTP",
+    media: "タイトルが入ります",
+    imgSrc: "/content_paper.jpg",
+    text: "仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事名",
+  },
+  {
+    id: 1,
+    occupation: "DTP",
     media: "paper",
-    imgSrc: "string",
+    imgSrc: "/content_paper.jpg",
+    text: "仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事",
+  },
+  {
+    id: 2,
+    occupation: "DTP",
+    media: "paper",
+    imgSrc: "/content_paper.jpg",
+    text: "仕事仕事仕事仕事仕事仕事",
+  },
+  {
+    id: 3,
+    occupation: "DTP",
+    media: "paper",
+    imgSrc: "/content_paper.jpg",
     text: "仕事名",
   },
 ];
@@ -71,16 +92,13 @@ export default function Paper() {
       <Header refPositions={refPositions}></Header>
       <main>
         <section
-          className="pt-20 sm:mx-auto sm:max-w-screen-lg"
+          className="mx-4 mt-4 sm:mx-auto sm:mb-0 sm:max-w-screen-lg sm:pt-20"
           id="paperAreaTop"
           ref={areaWorkRef}
         >
           <div className="flex flex-col items-center">
-            <h1>公開準備中</h1>
+            <h1 className="capitalize">Paper-print-</h1>
           </div>
-        </section>
-        <section>
-          <h1>Paper-print-</h1>
           <ul>
             {paperJobs.map((item: PaperJob) => (
               <PaperContentCard
