@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useState, useRef, useEffect } from "react";
-import { PaperContentCard } from "@/components/PaperContentCard";
+import PaperContentCard from "@/components/PaperContentCard";
 
 type PaperJob = {
   id: number;
@@ -36,6 +36,20 @@ const paperJobs: PaperJob[] = [
   },
   {
     id: 3,
+    occupation: "DTP",
+    media: "paper",
+    imgSrc: "/content_paper.jpg",
+    text: "仕事名",
+  },
+  {
+    id: 4,
+    occupation: "DTP",
+    media: "paper",
+    imgSrc: "/content_paper.jpg",
+    text: "仕事仕事仕事仕事仕事仕事",
+  },
+  {
+    id: 5,
     occupation: "DTP",
     media: "paper",
     imgSrc: "/content_paper.jpg",
@@ -92,12 +106,13 @@ export default function Paper() {
       <Header refPositions={refPositions}></Header>
       <main>
         <section
-          className="mx-4 mt-4 sm:mx-auto sm:mb-0 sm:max-w-screen-lg sm:pt-20"
+          className="mx-4 mt-4 sm:mx-auto sm:mb-0 sm:mt-0 sm:max-w-screen-lg sm:pt-20"
           id="paperAreaTop"
           ref={areaWorkRef}
         >
           <div className="flex flex-col items-center">
-            <h1 className="capitalize">Paper-print-</h1>
+            <h2 className="">-print-</h2>
+            <h1 className="pb-8 capitalize leading-10">Paper</h1>
           </div>
           <ul>
             {paperJobs.map((item: PaperJob) => (

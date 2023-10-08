@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import { useInView } from "react-intersection-observer";
 
 type Props = {
   imgSrc: string;
@@ -7,14 +6,24 @@ type Props = {
   text: string;
 };
 
-export function PaperContentCard({ imgSrc, media, text }: Props) {
+const PaperContentCard = ({ imgSrc, media, text }: Props) => {
+  const { ref, inView } = useInView({
+    rootMargin: "-30px",
+    triggerOnce: true,
+    threshold: 0.3,
+  });
   const srcUrl: string = imgSrc;
   const title: string = media;
+
   return (
-    <li className="flex flex-col items-center bg-blue-200 pb-6 sm:drop-shadow-sm">
+    <li
+      ref={ref}
+      className={`sm:drop-shadow-sm" flex flex-col items-center bg-blue-200 pb-6
+        ${inView ? "scrollFadeIn " : "scrollFadeInHidden "}`}
+    >
       <img
         className="aspect-video w-full"
-        src={srcUrl}
+        src={imgSrc}
         alt={media + "Img"}
         width={640}
         height={424}
@@ -27,4 +36,6 @@ export function PaperContentCard({ imgSrc, media, text }: Props) {
       </div>
     </li>
   );
-}
+};
+
+export default PaperContentCard;
