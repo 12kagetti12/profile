@@ -103,7 +103,7 @@ const Header: React.FC<RefProps> = ({ refPositions }) => {
   }, [scrollTop, refPositions]);
 
   return (
-    <header className="flex h-20 justify-center bg-white sm:fixed sm:w-full">
+    <header className="flex h-20 justify-center bg-white sm:fixed sm:z-10 sm:w-full">
       <div className="mx-4 flex w-full items-center sm:max-w-screen-lg">
         <h1 className="w-28">
           <Link href="/#areaTop" scroll={false}>

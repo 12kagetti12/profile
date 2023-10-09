@@ -84,8 +84,8 @@ export default function Home() {
       <main>
         <div className="mx-0 mb-20 sm:mb-0 sm:max-w-full">
           <img
-            className="h-screen object-cover sm:h-auto sm:max-w-full"
-            src="/mainVisualSummer.jpg"
+            className="h-screen object-cover sepia filter sm:h-auto sm:max-w-full"
+            src="/mainVisualAutumn.jpg"
             alt="mainVisual"
             width={1920}
             height={1280}
