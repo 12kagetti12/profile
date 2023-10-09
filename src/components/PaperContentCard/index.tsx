@@ -9,7 +9,6 @@ type Props = {
 const PaperContentCard = ({ imgSrc, media, text }: Props) => {
   const { ref, inView } = useInView({
     rootMargin: "-30px",
-    triggerOnce: true,
     threshold: 0.3,
   });
   const srcUrl: string = imgSrc;

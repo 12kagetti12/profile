@@ -20,7 +20,7 @@
   }
 
   .scrollFadeInHidden {
-    @apply inline-block opacity-0;
+    @apply inline-block opacity-0 transition-opacity duration-1000 ease-in-out;
   }
 
   .scrollFadeIn {
