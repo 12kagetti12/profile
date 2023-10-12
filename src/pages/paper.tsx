@@ -23,35 +23,35 @@ const paperJobs: PaperJob[] = [
   {
     id: 1,
     occupation: "DTP",
-    media: "paper",
+    media: "Paper",
     imgSrc: "/content_paper.jpg",
     text: "仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事",
   },
   {
     id: 2,
     occupation: "DTP",
-    media: "paper",
+    media: "Paper",
     imgSrc: "/content_paper.jpg",
     text: "仕事仕事仕事仕事仕事仕事",
   },
   {
     id: 3,
     occupation: "DTP",
-    media: "paper",
+    media: "Paper",
     imgSrc: "/content_paper.jpg",
     text: "仕事名",
   },
   {
     id: 4,
     occupation: "DTP",
-    media: "paper",
+    media: "Paper",
     imgSrc: "/content_paper.jpg",
     text: "仕事仕事仕事仕事仕事仕事",
   },
   {
     id: 5,
     occupation: "DTP",
-    media: "paper",
+    media: "Paper",
     imgSrc: "/content_paper.jpg",
     text: "仕事名",
   },
@@ -115,12 +115,13 @@ export default function Paper() {
             <h1 className="pb-8 capitalize leading-10">Paper</h1>
           </div>
           <ul>
-            {paperJobs.map((item: PaperJob) => (
+            {paperJobs.map((item: PaperJob, index: number) => (
               <PaperContentCard
                 key={item.id}
                 imgSrc={item.imgSrc}
                 media={item.media}
                 text={item.text}
+                style={index % 2 === 0 ? "sm:flex-row-reverse" : "sm:flex-row"}
               />
             ))}
           </ul>
