@@ -9,51 +9,65 @@ type PaperJob = {
   occupation: string;
   media: string;
   imgSrc: string;
+  client: string;
   text: string;
+  url: string;
 };
 
 const paperJobs: PaperJob[] = [
   {
     id: 0,
     occupation: "DTP",
-    media: "タイトルが入ります",
-    imgSrc: "/content_paper.jpg",
-    text: "仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事名",
+    media: "電機連合NAVI",
+    imgSrc: "/paperContent_NAVI.jpg",
+    client: "電機連合",
+    text: "URL（2022.1.25時点）",
+    url: "https://www.jeiu.or.jp/report/navi/2021/12000821.html",
   },
   {
     id: 1,
     occupation: "DTP",
     media: "Paper",
-    imgSrc: "/content_paper.jpg",
+    imgSrc: "/paperContent07.jpg",
+    client: "###",
     text: "仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事",
+    url: "",
   },
   {
     id: 2,
     occupation: "DTP",
     media: "Paper",
-    imgSrc: "/content_paper.jpg",
+    imgSrc: "/paperContent01.jpg",
+    client: "###",
     text: "仕事仕事仕事仕事仕事仕事",
+    url: "",
   },
   {
     id: 3,
     occupation: "DTP",
     media: "Paper",
-    imgSrc: "/content_paper.jpg",
+    imgSrc: "/paperContent10.jpg",
+    client: "###",
     text: "仕事名",
+    url: "",
   },
   {
     id: 4,
     occupation: "DTP",
     media: "Paper",
-    imgSrc: "/content_paper.jpg",
+    imgSrc: "/paperContent04.jpg",
+    client: "###",
     text: "仕事仕事仕事仕事仕事仕事",
+    url: "",
   },
   {
     id: 5,
     occupation: "DTP",
     media: "Paper",
-    imgSrc: "/content_paper.jpg",
+    imgSrc: "/paperContent13.jpg",
+    client: "###",
     text: "仕事名",
+    url: "",
   },
 ];
 
@@ -74,10 +88,7 @@ export default function Paper() {
     contactRefPosition: null,
   });
 
-  const areaTopRef = useRef(null);
-  const areaProfileRef = useRef(null);
   const areaWorkRef = useRef(null);
-  const contactRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -121,8 +132,10 @@ export default function Paper() {
               <PaperContentCard
                 key={item.id}
                 imgSrc={item.imgSrc}
+                client={item.client}
                 media={item.media}
                 text={item.text}
+                url={item.url}
                 style={index % 2 === 0 ? "sm:flex-row-reverse" : "sm:flex-row"}
               />
             ))}
