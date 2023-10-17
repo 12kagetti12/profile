@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
@@ -7,24 +6,24 @@ type Props = {
   text: string;
 };
 
-export function ContentCard({ imgSrc, media, text }: Props) {
+const ContentCard = ({ imgSrc, media, text }: Props) => {
   const srcUrl: string = imgSrc;
   const title: string = media;
-  const contentUrl = "/" + media;
+  const contentUrl = `/${media}`;
   return (
     <li className="flex flex-col items-center leading-none">
       <Link
         href={contentUrl}
         className="flex flex-col items-center no-underline"
       >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="h-auto max-w-full"
           src={srcUrl}
-          alt={media + "Img"}
+          alt={`${media}Img`}
           width={640}
           height={424}
           sizes="(max-width:640px) 80vw,(max-width:1200px) 40vw,25vw"
-          // priority
         />
       </Link>
       <Link href={contentUrl} className="pt-2 no-underline">
@@ -33,4 +32,6 @@ export function ContentCard({ imgSrc, media, text }: Props) {
       <p className="pt-4">{text}</p>
     </li>
   );
-}
+};
+
+export default ContentCard;

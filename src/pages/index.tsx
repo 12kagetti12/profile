@@ -1,8 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
 import Header from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { ContentCard } from "@/components/ContentCard";
+import Footer from "@/components/Footer";
+import ContentCard from "@/components/ContentCard";
 import { useEffect, useState, useRef } from "react";
 
 type WORK = {
@@ -31,6 +30,7 @@ const WORKS: WORK[] = [
 ];
 
 export default function Home() {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   type refPositions = {
     topRefPosition: number;
     profileRefPosition: number;
@@ -38,6 +38,7 @@ export default function Home() {
     contactRefPosition: number;
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
   const [refPositions, setRefPositions] = useState({
     topRefPosition: 0,
     profileRefPosition: 0,
@@ -48,7 +49,6 @@ export default function Home() {
   const areaTopRef = useRef(null);
   const areaProfileRef = useRef(null);
   const areaWorkRef = useRef(null);
-  const contactRefPosition = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,13 +76,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Sstoshi's Portfolio</title>
+        <title>Satoshi&apos;s Portfolio</title>
       </Head>
       <div id="areaTop" ref={areaTopRef}>
         <Header refPositions={refPositions}></Header>
       </div>
       <main>
         <div className="mx-0 mb-20 sm:mb-0 sm:max-w-full">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="h-screen object-cover sepia filter sm:h-auto sm:max-w-full"
             src="/mainVisualAutumn.jpg"
@@ -102,6 +103,7 @@ export default function Home() {
           <div className="mx-4 flex flex-col items-center">
             <h1 className="mb-6 capitalize">Profile</h1>
             <div className="flex items-start justify-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className="mr-4 h-24 w-24 rounded-full"
                 src="/profile_polkaDot.jpg"

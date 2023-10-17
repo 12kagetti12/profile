@@ -1,12 +1,11 @@
 "#init";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import House_fill from "@/components/icons/House.svg";
 import Me_fill from "@/components/icons/Me_fill.svg";
 import Work from "@/components/icons/Work.svg";
 import Mail from "@/components/icons/Mail.svg";
-import { useState } from "react";
 
 type Icon = {
   id: number;
@@ -59,8 +58,10 @@ type RefProps = {
 const Header: React.FC<RefProps> = ({ refPositions }) => {
   const [scrollTop, setScrollTop] = useState(0);
   const [navStatuses, setNavStatuses] = useState(navIcons);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const updateStatuses = (id: number) => {
     const newNavStatus = navStatuses.map((icon) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions, no-param-reassign
       icon.id === id ? (icon.active = true) : (icon.active = false);
       return icon;
     });
@@ -83,18 +84,18 @@ const Header: React.FC<RefProps> = ({ refPositions }) => {
   useEffect(() => {
     if (
       scrollTop < refPositions.profileRefPosition &&
-      0 < refPositions.profileRefPosition
+      refPositions.profileRefPosition > 0
     ) {
       updateStatuses(0);
     } else if (
       refPositions.profileRefPosition <= scrollTop &&
       scrollTop < refPositions.workRefPosition &&
-      0 < refPositions.profileRefPosition
+      refPositions.profileRefPosition > 0
     ) {
       updateStatuses(1);
     } else if (
       refPositions.workRefPosition <= scrollTop &&
-      0 < refPositions.workRefPosition
+      refPositions.workRefPosition > 0
     ) {
       updateStatuses(2);
     } else if (refPositions.contactRefPosition > 0) {
@@ -107,6 +108,7 @@ const Header: React.FC<RefProps> = ({ refPositions }) => {
       <div className="mx-4 flex w-full items-center sm:max-w-screen-lg">
         <h1 className="w-28">
           <Link href="/#areaTop" scroll={false}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className="w-fit" src="/logo.svg" alt="logo" />
           </Link>
         </h1>

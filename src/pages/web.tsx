@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Header from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import Footer from "@/components/Footer";
 import { useState, useRef, useEffect } from "react";
 
 export default function Web() {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   type refPositions = {
     topRefPosition: number;
     profileRefPosition: number;
@@ -11,6 +12,7 @@ export default function Web() {
     contactRefPosition: number;
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
   const [refPositions, setRefPositions] = useState({
     topRefPosition: null,
     profileRefPosition: null,
@@ -18,10 +20,7 @@ export default function Web() {
     contactRefPosition: null,
   });
 
-  const areaTopRef = useRef(null);
-  const areaProfileRef = useRef(null);
   const areaWorkRef = useRef(null);
-  const contactRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
