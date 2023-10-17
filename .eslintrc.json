@@ -1,0 +1,29 @@
+{
+  "env": {
+    "es6": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest",
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    // "no-console": ["error"],
+    // "indent": ["error", 2],
+    // "quotes": ["error", "double"],
+    // "semi": ["error", "always"],
+    // "no-unused-vars": ["warn"],
+    // "camelcase": ["warn"]
+  },
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "airbnb-base",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ]
+}
