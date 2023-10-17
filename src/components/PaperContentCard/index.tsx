@@ -21,6 +21,7 @@ const PaperContentCard = ({ imgSrc, media, text, style }: Props) => {
       className={`flex flex-col items-start pb-6 sm:flex-1 sm:items-start sm:drop-shadow-sm
         ${inView ? "scrollFadeIn " : "scrollFadeInHidden "} ${style}`}
     >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         className="aspect-video w-full sm:w-1/2"
         src={imgSrc}

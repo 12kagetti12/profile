@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import Footer from "@/components/Footer";
 import { useState, useRef, useEffect } from "react";
 import PaperContentCard from "@/components/PaperContentCard";
 
@@ -58,6 +58,7 @@ const paperJobs: PaperJob[] = [
 ];
 
 export default function Paper() {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   type refPositions = {
     topRefPosition: number;
     profileRefPosition: number;
@@ -65,6 +66,7 @@ export default function Paper() {
     contactRefPosition: number;
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
   const [refPositions, setRefPositions] = useState({
     topRefPosition: null,
     profileRefPosition: null,
