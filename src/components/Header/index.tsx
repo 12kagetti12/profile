@@ -58,13 +58,11 @@ type RefProps = {
 const Header: React.FC<RefProps> = ({ refPositions }) => {
   const [scrollTop, setScrollTop] = useState(0);
   const [navStatuses, setNavStatuses] = useState(navIcons);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const updateStatuses = (id: number) => {
-    const newNavStatus = navStatuses.map((icon) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions, no-param-reassign
-      icon.id === id ? (icon.active = true) : (icon.active = false);
-      return icon;
-    });
+    const newNavStatus = navStatuses.map((icon) => ({
+      ...icon,
+      active: icon.id === id,
+    }));
     setNavStatuses(newNavStatus);
   };
 
@@ -117,7 +115,7 @@ const Header: React.FC<RefProps> = ({ refPositions }) => {
             className="flex w-full items-center justify-around sm:justify-end"
             id="scroll_nav"
           >
-            {navIcons.map((icon) => (
+            {navStatuses.map((icon) => (
               <li
                 key={icon.id}
                 className={
