@@ -97,7 +97,7 @@ export default function Paper() {
       const getAreaRefs = {
         topRefPosition: null,
         profileRefPosition: null,
-        workRefPosition: startingRef,
+        workRefPosition: startingRef + 1,
         contactRefPosition: null,
       };
       setRefPositions(getAreaRefs);
