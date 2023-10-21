@@ -1,5 +1,3 @@
-"#init";
-
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import House_fill from "@/components/icons/House.svg";
@@ -21,7 +19,7 @@ const navIcons: Icon[] = [
     iconSvg: House_fill,
     text: "home",
     sectionName: "/#areaTop",
-    active: true,
+    active: false,
   },
   {
     id: 1,
