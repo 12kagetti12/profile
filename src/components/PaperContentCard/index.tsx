@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 type Props = {
@@ -21,13 +22,27 @@ const PaperContentCard = ({
     rootMargin: "-30px",
     threshold: 0.3,
   });
+
+  const [isDisplay, setIsDisplay] = useState("scrollFadeInHidden");
+
+  useEffect(() => {
+    if (!inView) {
+      setIsDisplay("scrollFadeOut");
+      const timeState = setTimeout(() => {
+        setIsDisplay("scrollFadeInHidden");
+      }, 2000);
+      return () => clearTimeout(timeState);
+    }
+    return setIsDisplay("scrollFadeIn");
+  }, [inView]);
+
   const title: string = media;
 
   return (
     <li
       ref={ref}
       className={`flex flex-col items-start pb-6 sm:flex-1 sm:items-start
-        ${inView ? "scrollFadeIn" : "scrollFadeInHidden "} ${style}`}
+        ${isDisplay} ${style}`}
     >
       <div className="flex justify-center sm:w-1/2">
         {/* eslint-disable-next-line @next/next/no-img-element */}
