@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState, useRef, useEffect } from "react";
 import PaperContentCard from "@/components/PaperContentCard";
+import DetailsCard from "@/components/DetailsCard";
 
 type PaperJob = {
   id: number;
@@ -129,15 +130,19 @@ export default function Paper() {
           </div>
           <ul>
             {paperJobs.map((item: PaperJob, index: number) => (
-              <PaperContentCard
-                key={item.id}
-                imgSrc={item.imgSrc}
-                client={item.client}
-                media={item.media}
-                text={item.text}
-                url={item.url}
-                style={index % 2 === 0 ? "sm:flex-row-reverse" : "sm:flex-row"}
-              />
+              <div key={item.id}>
+                <PaperContentCard
+                  imgSrc={item.imgSrc}
+                  client={item.client}
+                  media={item.media}
+                  text={item.text}
+                  url={item.url}
+                  style={
+                    index % 2 === 0 ? "sm:flex-row-reverse" : "sm:flex-row"
+                  }
+                />
+                <DetailsCard {...item} />
+              </div>
             ))}
           </ul>
         </section>

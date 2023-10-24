@@ -30,6 +30,23 @@
   .scrollFadeOut {
     @apply inline-block -translate-y-4 pt-4 opacity-0 transition-all duration-1000 ease-in-out;
   }
+
+  .roundButton {
+    @apply sr-only relative block h-6 w-6 rounded-full border-2 border-solid border-gray-400 bg-opacity-0;
+  }
+
+  .roundButton::after,
+  .roundButton::before {
+    @apply absolute left-1/2 top-1/2 h-4 w-0.5 rounded-lg bg-gray-400 content-[""];
+  }
+
+  .roundButton::after {
+    @apply -translate-x-1/2 -translate-y-1/2 rotate-45 transform;
+  }
+
+  .roundButton::before {
+    @apply -translate-x-1/2 -translate-y-1/2 -rotate-45 transform;
+  }
 }
 
 /* =================================
