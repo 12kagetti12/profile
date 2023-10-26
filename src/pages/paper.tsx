@@ -130,7 +130,7 @@ export default function Paper() {
           </div>
           <ul>
             {paperJobs.map((item: PaperJob, index: number) => (
-              <div key={item.id}>
+              <div className="relative" key={item.id}>
                 <PaperContentCard
                   imgSrc={item.imgSrc}
                   client={item.client}
