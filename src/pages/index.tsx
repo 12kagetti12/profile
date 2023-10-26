@@ -82,16 +82,12 @@ export default function Home() {
         <Header refPositions={refPositions}></Header>
       </div>
       <main>
-        <div className="mx-0 mb-20 sm:mb-0 sm:max-w-full">
+        <div className="mx-0 mb-20 sm:mb-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="h-screen object-cover sepia filter sm:h-auto sm:max-w-full"
+            className="h-[90vh] object-cover sepia filter sm:h-screen sm:w-full"
             src="/mainVisualAutumn.jpg"
             alt="mainVisual"
-            width={1920}
-            height={1280}
-            sizes="(max-width:640px) 100vh,(max-width:1200px) 100vh,100vh"
-            // priority={true}
           />
         </div>
 
