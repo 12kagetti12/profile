@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import PaperContentCard from "@/components/PaperContentCard";
 import DetailsCard from "@/components/DetailsCard";
+// import useHandleIsShow from "@/hocks/useHandleIsShow";
 
 type PaperJob = {
   id: number;
@@ -31,7 +32,7 @@ const paperJobs: PaperJob[] = [
     media: "Paper",
     imgSrc: "/paperContent01.jpg",
     client: "###",
-    text: "仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事",
+    text: "仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事仕事",
     url: "",
   },
   {
@@ -73,16 +74,14 @@ const paperJobs: PaperJob[] = [
 ];
 
 export default function Paper() {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  type refPositions = {
+  type RefPositions = {
     topRefPosition: number;
     profileRefPosition: number;
     workRefPosition: number;
     contactRefPosition: number;
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-  const [refPositions, setRefPositions] = useState({
+  const [refPositions, setRefPositions] = useState<RefPositions>({
     topRefPosition: null,
     profileRefPosition: null,
     workRefPosition: 1,
@@ -90,6 +89,20 @@ export default function Paper() {
   });
 
   const areaWorkRef = useRef(null);
+  const [isShow, setIsShow] = useState(() => {
+    const jobsLength: number = paperJobs.length;
+    return Array.from({ length: jobsLength }, () => false);
+  });
+
+  const toggleVisibility = useCallback((id: number) => {
+    setIsShow((prevIsShow: []) => {
+      const newIsShow = {
+        ...prevIsShow,
+        [id]: !prevIsShow[id],
+      };
+      return newIsShow;
+    });
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -132,16 +145,18 @@ export default function Paper() {
             {paperJobs.map((item: PaperJob, index: number) => (
               <div className="relative" key={item.id}>
                 <PaperContentCard
-                  imgSrc={item.imgSrc}
-                  client={item.client}
-                  media={item.media}
-                  text={item.text}
-                  url={item.url}
+                  {...item}
                   style={
                     index % 2 === 0 ? "sm:flex-row-reverse" : "sm:flex-row"
                   }
+                  isShowProps={isShow[item.id]}
+                  handleDisplay={() => toggleVisibility(item.id)}
                 />
-                <DetailsCard {...item} />
+                <DetailsCard
+                  {...item}
+                  isShowProps={isShow[item.id]}
+                  handleDisplay={() => toggleVisibility(item.id)}
+                />
               </div>
             ))}
           </ul>

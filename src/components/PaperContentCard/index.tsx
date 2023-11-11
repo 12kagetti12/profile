@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 type Props = {
+  id: number;
   imgSrc: string;
   client: string;
   media: string;
   text: string;
   url: string;
   style: string;
+  isShowProps: boolean;
+  handleDisplay: () => void;
 };
 
 const PaperContentCard = ({
@@ -17,6 +21,7 @@ const PaperContentCard = ({
   text,
   url,
   style,
+  handleDisplay,
 }: Props) => {
   const { ref, inView } = useInView({
     rootMargin: "-30px",
@@ -24,7 +29,6 @@ const PaperContentCard = ({
   });
 
   const [isDisplay, setIsDisplay] = useState("scrollFadeInHidden");
-
   useEffect(() => {
     if (!inView) {
       setIsDisplay("scrollFadeOut");
@@ -54,20 +58,20 @@ const PaperContentCard = ({
       </div>
       <div className="flex flex-col sm:w-1/2 sm:pl-2">
         <div className="sm:hoverUnderLine01 flex w-fit flex-col pb-0.5">
-          <button>
+          <button onClick={handleDisplay}>
             <h2>{title}</h2>
           </button>
         </div>
         <p>{client}</p>
         <p>{text}</p>
-        <a
+        <Link
           href={url}
           target="_blank"
           rel="noopener noreferrer"
           className="break-all"
         >
           {url}
-        </a>
+        </Link>
       </div>
     </li>
   );
