@@ -7,7 +7,6 @@ type Props = {
   imgSrc: string;
   client: string;
   media: string;
-  text: string;
   url: string;
   style: string;
   isShowProps: boolean;
@@ -18,7 +17,6 @@ const PaperContentCard = ({
   imgSrc,
   client,
   media,
-  text,
   url,
   style,
   handleDisplay,
@@ -51,9 +49,10 @@ const PaperContentCard = ({
       <div className="flex justify-center sm:w-1/2">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          className="aspect-auto shadow-lg sm:max-h-[80vh]"
+          className="aspect-auto cursor-pointer shadow-lg sm:max-h-[80vh]"
           src={imgSrc}
           alt={`${media}Img`}
+          onClick={handleDisplay}
         />
       </div>
       <div className="flex flex-col sm:w-1/2 sm:pl-2">
@@ -63,7 +62,6 @@ const PaperContentCard = ({
           </button>
         </div>
         <p>{client}</p>
-        <p>{text}</p>
         <Link
           href={url}
           target="_blank"

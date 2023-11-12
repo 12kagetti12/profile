@@ -24,9 +24,10 @@ const DetailsCard: React.FC<Props> = ({
     <div
       className={`${
         isShowProps
-          ? "translate-opacity h-[100vh] w-[100vw] duration-500"
-          : "h-0 w-0 duration-1000"
-      } fixed bottom-0 left-0 z-10  bg-black/50 backdrop-blur-sm`}
+          ? "h-[100vh] w-[100vw] duration-500"
+          : "h-0 w-0 delay-500 duration-1000"
+      } fixed bottom-0 left-0 z-10 bg-black/50 backdrop-blur-sm`}
+      onClick={handleDisplay}
     ></div>
     <div
       className={`${
