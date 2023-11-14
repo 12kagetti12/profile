@@ -32,14 +32,14 @@ const DetailsCard: React.FC<Props> = ({
     <div
       className={`${
         isShowProps
-          ? "w-fit opacity-100 delay-500 duration-1000"
+          ? "opacity-100 delay-500 duration-1000"
           : "translate-y-full opacity-0 duration-1000"
-      } fixed left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transform rounded-lg bg-white/95 p-8 shadow-lg backdrop-blur-sm`}
+      } fixed left-1/2 top-1/2 z-20 w-[90vw] -translate-x-1/2 -translate-y-1/2 transform rounded-lg bg-white/95 p-8 shadow-lg backdrop-blur-sm sm:w-[90vw] sm:max-w-screen-sm`}
     >
       <h1 className="pb-2 leading-10">{media}</h1>
-      <div className="flex max-h-[65vh] w-[70vw] snap-y flex-col overflow-y-scroll sm:flex-row sm:overflow-x-auto">
+      <div className="flex h-fit snap-y flex-col overflow-y-scroll sm:w-full sm:flex-row sm:overflow-x-auto">
         <img
-          className="mb-2 aspect-auto h-auto w-[70vw] snap-start sm:h-fit sm:w-1/2"
+          className="mb-2 aspect-auto w-full snap-start sm:w-1/2"
           src={imgSrc}
           alt={`${media}Img`}
         />

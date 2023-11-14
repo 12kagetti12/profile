@@ -49,7 +49,7 @@ const PaperContentCard = ({
       <div className="flex justify-center sm:w-1/2">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          className="aspect-auto cursor-pointer shadow-lg sm:max-h-[80vh]"
+          className="aspect-auto w-full cursor-pointer shadow-lg"
           src={imgSrc}
           alt={`${media}Img`}
           onClick={handleDisplay}
@@ -66,7 +66,7 @@ const PaperContentCard = ({
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="break-all"
+          className="break-all hover:text-gray-500"
         >
           {url}
         </Link>
