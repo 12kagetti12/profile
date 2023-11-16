@@ -37,7 +37,7 @@ const DetailsCard: React.FC<Props> = ({
       } fixed left-1/2 top-1/2 z-20 w-[80vw] -translate-x-1/2 -translate-y-1/2 transform rounded-lg bg-white/95 p-8 shadow-lg backdrop-blur-sm sm:max-w-screen-sm`}
     >
       <h1 className="pb-2 leading-10">{media}</h1>
-      <div className="flex h-fit max-h-[60vh] snap-y flex-col overflow-y-scroll sm:w-full sm:flex-row sm:overflow-x-auto">
+      <div className="flex h-fit max-h-[50vh] snap-y flex-col overflow-y-scroll sm:max-h-[60vh] sm:w-full sm:flex-row sm:overflow-x-auto">
         <img
           className="mb-2 aspect-auto w-full snap-start sm:w-1/2"
           src={imgSrc}
