@@ -49,7 +49,7 @@ const PaperContentCard = ({
       <div className="flex justify-center sm:w-1/2">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          className="aspect-auto w-full cursor-pointer shadow-lg"
+          className="aspect-auto w-full cursor-pointer shadow-lg sm:h-full sm:max-h-[80vh] sm:w-auto"
           src={imgSrc}
           alt={`${media}Img`}
           onClick={handleDisplay}
