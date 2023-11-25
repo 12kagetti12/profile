@@ -1,59 +1,46 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
+import useIntersectionObserver from "@/hocks/useHandleIsShow";
 
 export default function Contact() {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  type refPositions = {
-    topRefPosition: number;
-    profileRefPosition: number;
-    workRefPosition: number;
-    contactRefPosition: number;
+  const areaContactRef = useRef<HTMLDialogElement>(null);
+  const [iconActiveIndex, setIconActiveIndex] = useState(2);
+  const activeSectionCallback = (index: number) => {
+    setIconActiveIndex(index);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-  const [refPositions, setRefPositions] = useState({
-    topRefPosition: null,
-    profileRefPosition: null,
-    workRefPosition: null,
-    contactRefPosition: 1,
-  });
+  const showElements = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        switch (entry.target.id) {
+          case "areaWork":
+            setIconActiveIndex(3);
+            break;
+          default:
+            break;
+        }
+      }
+    });
+  };
 
-  const contactRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const startingRef: number =
-        contactRef.current.getBoundingClientRect().top;
-      const getAreaRefs = {
-        topRefPosition: null,
-        profileRefPosition: null,
-        workRefPosition: null,
-        contactRefPosition: startingRef,
-      };
-      setRefPositions(getAreaRefs);
-    };
-    window.addEventListener("load", handleScroll);
-    window.addEventListener("resize", handleScroll);
-    handleScroll();
-    return () => {
-      window.removeEventListener("load", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
+  useIntersectionObserver([areaContactRef], showElements);
 
   return (
     <>
       <Head>
         <title>Contact</title>
       </Head>
-      <Header refPositions={refPositions}></Header>
+      <Header
+        itemState={iconActiveIndex}
+        isShowSection={activeSectionCallback}
+      ></Header>
       <main>
         <section
           className="pt-20 sm:mx-auto sm:max-w-screen-lg"
           id="areaTop"
-          ref={contactRef}
+          ref={areaContactRef}
         >
           <div className="flex flex-col items-center">
             <h1>公開準備中</h1>
