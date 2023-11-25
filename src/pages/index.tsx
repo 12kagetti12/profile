@@ -2,7 +2,8 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContentCard from "@/components/ContentCard";
-import { useEffect, useState, useRef } from "react";
+import { useRef, useState } from "react";
+import useIntersectionObserver from "@/hocks/useHandleIsShow";
 
 type WORK = {
   id: number;
@@ -30,57 +31,56 @@ const WORKS: WORK[] = [
 ];
 
 export default function Home() {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  type refPositions = {
-    topRefPosition: number;
-    profileRefPosition: number;
-    workRefPosition: number;
-    contactRefPosition: number;
+  const areaTopRef = useRef<HTMLDialogElement>(null);
+  const areaProfileRef = useRef<HTMLDialogElement>(null);
+  const areaWorkRef = useRef<HTMLDialogElement>(null);
+  const [iconActiveIndex, setIconActiveIndex] = useState(0);
+  const activeSectionCallback = (index: number) => {
+    setIconActiveIndex(index);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-  const [refPositions, setRefPositions] = useState({
-    topRefPosition: 0,
-    profileRefPosition: 0,
-    workRefPosition: 0,
-    contactRefPosition: null,
-  });
+  const showElements = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        switch (entry.target.id) {
+          case "areaTop":
+            setIconActiveIndex(0);
+            break;
+          case "areaProfile":
+            setIconActiveIndex(1);
+            break;
+          case "areaWork":
+            setIconActiveIndex(2);
+            break;
+          default:
+            break;
+        }
+      }
+    });
+  };
 
-  const areaTopRef = useRef(null);
-  const areaProfileRef = useRef(null);
-  const areaWorkRef = useRef(null);
+  const IntersectionOptions = {
+    rootMargin: "0% 0% -80% 0%",
+    threshold: 0.1,
+  };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const startingRef: number =
-        areaTopRef.current.getBoundingClientRect().top;
-      const getAreaRefs = {
-        topRefPosition: startingRef,
-        profileRefPosition:
-          areaProfileRef.current.getBoundingClientRect().top - startingRef,
-        workRefPosition:
-          areaWorkRef.current.getBoundingClientRect().top - startingRef,
-        contactRefPosition: null,
-      };
-      setRefPositions(getAreaRefs);
-    };
-    window.addEventListener("load", handleScroll);
-    window.addEventListener("resize", handleScroll);
-    handleScroll();
-    return () => {
-      window.removeEventListener("load", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
+  useIntersectionObserver(
+    [areaTopRef, areaProfileRef, areaWorkRef],
+    showElements,
+    IntersectionOptions,
+  );
 
   return (
     <>
       <Head>
         <title>Satoshi&apos;s Portfolio</title>
       </Head>
-      <div id="areaTop" ref={areaTopRef}>
-        <Header refPositions={refPositions}></Header>
-      </div>
+      <section id="areaTop" ref={areaTopRef}>
+        <Header
+          itemState={iconActiveIndex}
+          isShowSection={activeSectionCallback}
+        ></Header>
+      </section>
       <main>
         <div className="mx-0 mb-20 sm:mb-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}

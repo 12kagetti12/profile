@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import PaperContentCard from "@/components/PaperContentCard";
 import DetailsCard from "@/components/DetailsCard";
-// import useHandleIsShow from "@/hocks/useHandleIsShow";
+import useIntersectionObserver from "@/hocks/useHandleIsShow";
 
 type PaperJob = {
   id: number;
@@ -74,21 +74,28 @@ const paperJobs: PaperJob[] = [
 ];
 
 export default function Paper() {
-  type RefPositions = {
-    topRefPosition: number;
-    profileRefPosition: number;
-    workRefPosition: number;
-    contactRefPosition: number;
+  const areaWorkRef = useRef<HTMLDialogElement>(null);
+  const [iconActiveIndex, setIconActiveIndex] = useState(2);
+  const activeSectionCallback = (index: number) => {
+    setIconActiveIndex(index);
   };
 
-  const [refPositions, setRefPositions] = useState<RefPositions>({
-    topRefPosition: null,
-    profileRefPosition: null,
-    workRefPosition: 1,
-    contactRefPosition: null,
-  });
+  const showElements = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        switch (entry.target.id) {
+          case "areaWork":
+            setIconActiveIndex(2);
+            break;
+          default:
+            break;
+        }
+      }
+    });
+  };
 
-  const areaWorkRef = useRef(null);
+  useIntersectionObserver([areaWorkRef], showElements);
+
   const [isShow, setIsShow] = useState(() => {
     const jobsLength: number = paperJobs.length;
     return Array.from({ length: jobsLength }, () => false);
@@ -104,34 +111,16 @@ export default function Paper() {
     });
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const startingRef: number =
-        areaWorkRef.current.getBoundingClientRect().top;
-      const getAreaRefs = {
-        topRefPosition: null,
-        profileRefPosition: null,
-        workRefPosition: startingRef + 1,
-        contactRefPosition: null,
-      };
-      setRefPositions(getAreaRefs);
-    };
-    window.addEventListener("load", handleScroll);
-    window.addEventListener("resize", handleScroll);
-    handleScroll();
-    return () => {
-      window.removeEventListener("load", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
-
   return (
     <>
       <Head>
         <title>Paper</title>
       </Head>
-      <Header refPositions={refPositions}></Header>
-      <main>
+      <Header
+        itemState={iconActiveIndex}
+        isShowSection={activeSectionCallback}
+      ></Header>
+      <main ref={areaWorkRef}>
         <section
           className="mx-4 mt-4 sm:mx-auto sm:mb-0 sm:mt-0 sm:max-w-screen-lg sm:pt-20"
           id="paperAreaTop"
