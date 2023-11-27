@@ -6,7 +6,7 @@ import useIntersectionObserver from "@/hocks/useHandleIsShow";
 
 export default function Contact() {
   const areaContactRef = useRef<HTMLDialogElement>(null);
-  const [iconActiveIndex, setIconActiveIndex] = useState(2);
+  const [iconActiveIndex, setIconActiveIndex] = useState(3);
   const activeSectionCallback = (index: number) => {
     setIconActiveIndex(index);
   };
