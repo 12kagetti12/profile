@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState, useRef, useCallback } from "react";
-import PaperContentCard from "@/components/PaperContentCard";
+import ModalCard from "@/components/ModalCard";
 import DetailsCard from "@/components/DetailsCard";
 import useIntersectionObserver from "@/hocks/useHandleIsShow";
 
@@ -133,7 +133,7 @@ export default function Paper() {
           <ul>
             {paperJobs.map((item: PaperJob, index: number) => (
               <div className="relative" key={item.id}>
-                <PaperContentCard
+                <ModalCard
                   {...item}
                   style={
                     index % 2 === 0 ? "sm:flex-row-reverse" : "sm:flex-row"
