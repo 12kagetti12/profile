@@ -66,7 +66,7 @@ const Header: React.FC<Props> = ({ itemState, isShowSection }) => {
   }, [isShowSection, itemState]);
 
   return (
-    <header className="flex h-8 justify-center bg-white sm:fixed sm:z-30 sm:h-20 sm:w-full">
+    <header className="flex h-16 justify-center bg-white sm:fixed sm:z-30 sm:h-20 sm:w-full">
       <div className="mx-4 flex w-full items-center sm:max-w-screen-lg">
         <h1 className="w-28">
           <Link href="/#areaTop" scroll={false}>
@@ -74,7 +74,7 @@ const Header: React.FC<Props> = ({ itemState, isShowSection }) => {
             <img className="w-fit" src="/logo.svg" alt="logo" />
           </Link>
         </h1>
-        <nav className="fixed bottom-0 left-0 z-30 flex h-8 w-full items-center bg-white sm:static sm:top-0 sm:h-fit sm:max-w-5xl sm:justify-end sm:bg-opacity-0">
+        <nav className="fixed bottom-0 left-0 z-30 flex h-14 w-full items-center bg-white sm:static sm:top-0 sm:h-fit sm:max-w-5xl sm:justify-end sm:bg-opacity-0">
           <ul
             className="flex w-full items-center justify-around sm:justify-end"
             id="scroll_nav"
