@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import ContentList from "@/components/ContentList";
 import useIntersectionObserver from "@/hocks/useHandleIsShow";
 import ModalCard from "@/components/ModalCard";
@@ -102,14 +102,22 @@ export default function Paper() {
   });
 
   const toggleVisibility = useCallback((id: number) => {
-    setIsShow((prevIsShow: []) => {
-      const newIsShow = {
-        ...prevIsShow,
-        [id]: !prevIsShow[id],
-      };
+    setIsShow((prevIsShow: boolean[]) => {
+      const newIsShow = [...prevIsShow];
+      newIsShow[id] = !prevIsShow[id];
       return newIsShow;
     });
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isShow.some((element) => element === true)
+      ? "hidden"
+      : "visible";
+
+    return () => {
+      document.body.style.overflow = "visible";
+    };
+  }, [isShow]);
 
   return (
     <>

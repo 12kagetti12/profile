@@ -26,7 +26,7 @@ const ModalCard: React.FC<Props> = ({
         isShowProps
           ? "h-[100vh] w-[100vw] duration-500"
           : "h-0 w-0 delay-500 duration-1000"
-      } fixed bottom-0 left-0 z-10 bg-black/50 backdrop-blur-sm`}
+      } fixed bottom-0 left-0 z-40 bg-black/50 backdrop-blur-sm`}
       onClick={handleDisplay}
     ></div>
     <div
@@ -34,7 +34,7 @@ const ModalCard: React.FC<Props> = ({
         isShowProps
           ? "opacity-100 delay-500 duration-1000"
           : "translate-y-full opacity-0 duration-1000"
-      } fixed left-1/2 top-1/2 z-20 w-[80vw] -translate-x-1/2 -translate-y-1/2 transform rounded-lg bg-white/95 p-8 shadow-lg backdrop-blur-sm sm:max-w-screen-sm`}
+      } fixed left-1/2 top-1/2 z-50 w-[80vw] -translate-x-1/2 -translate-y-1/2 transform rounded-lg bg-white/95 p-8 shadow-lg backdrop-blur-sm sm:max-w-screen-sm`}
     >
       <h1 className="pb-2 leading-10">{media}</h1>
       <div className="flex h-fit max-h-[50vh] snap-y flex-col overflow-y-scroll sm:max-h-[60vh] sm:w-full sm:flex-row sm:overflow-x-auto">
