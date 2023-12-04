@@ -86,7 +86,7 @@ export default function Home() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="h-[90vh] object-cover filter sm:h-screen sm:w-full"
-            src="/mainVisual.jpg"
+            src="/mainVisualWinter.jpg"
             alt="mainVisual"
           />
         </div>
