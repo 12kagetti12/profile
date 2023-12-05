@@ -46,14 +46,16 @@ const ContentList = ({
       className={`flex flex-col items-start pb-6 sm:flex-1 sm:items-start
         ${isDisplay} ${style}`}
     >
-      <div className="relative flex justify-center sm:h-[50vh] sm:w-1/2">
-        <h2 className="absolute top-1/2 z-0 aspect-auto animate-pulse text-gray-300">
+      <div className="relative flex min-h-[30vh] w-full justify-center sm:h-[60vh] sm:w-1/2">
+        <h2 className="absolute top-1/2 z-0 aspect-auto animate-pulse text-gray-300 drop-shadow-lg">
           Loading...
         </h2>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          className="z-10 aspect-auto w-full cursor-pointer object-contain shadow-lg sm:h-full sm:w-auto"
+          className="z-10 aspect-auto w-full cursor-pointer object-contain drop-shadow-lg sm:h-full sm:w-auto"
           src={imgSrc}
+          width={1240}
+          height={1754}
           alt={`${media}Img`}
           onClick={handleDisplay}
         />
