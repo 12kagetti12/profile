@@ -1,8 +1,32 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
+import ContentList from "@/components/ContentList";
 import useIntersectionObserver from "@/hocks/useHandleIsShow";
+import ModalCard from "@/components/ModalCard";
+
+type PaperJob = {
+  id: number;
+  occupation: string;
+  media: string;
+  imgSrc: string;
+  client: string;
+  text: string;
+  url: string;
+};
+
+const paperJobs: PaperJob[] = [
+  {
+    id: 0,
+    occupation: "WEB",
+    media: "Demo Site Cafe",
+    imgSrc: "#",
+    client: "Demo",
+    text: "#",
+    url: "#",
+  },
+];
 
 export default function Web() {
   const areaWorkRef = useRef<HTMLDialogElement>(null);
@@ -27,6 +51,29 @@ export default function Web() {
 
   useIntersectionObserver([areaWorkRef], showElements);
 
+  const [isShow, setIsShow] = useState(() => {
+    const jobsLength: number = paperJobs.length;
+    return Array.from({ length: jobsLength }, () => false);
+  });
+
+  const toggleVisibility = useCallback((id: number) => {
+    setIsShow((prevIsShow: boolean[]) => {
+      const newIsShow = [...prevIsShow];
+      newIsShow[id] = !prevIsShow[id];
+      return newIsShow;
+    });
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isShow.some((element) => element === true)
+      ? "hidden"
+      : "visible";
+
+    return () => {
+      document.body.style.overflow = "visible";
+    };
+  }, [isShow]);
+
   return (
     <>
       <Head>
@@ -36,15 +83,35 @@ export default function Web() {
         itemState={iconActiveIndex}
         isShowSection={activeSectionCallback}
       ></Header>
-      <main>
+      <main ref={areaWorkRef}>
         <section
-          className="pt-20 sm:mx-auto sm:max-w-screen-lg"
-          id="webAreaTop"
+          className="mx-4 mt-4 sm:mx-auto sm:mb-0 sm:mt-0 sm:max-w-screen-lg sm:pt-20"
+          id="paperAreaTop"
           ref={areaWorkRef}
         >
           <div className="flex flex-col items-center">
-            <h1>公開準備中</h1>
+            <h2 className="">-web-</h2>
+            <h1 className="pb-8 capitalize leading-10">Store Site</h1>
           </div>
+          <ul>
+            {paperJobs.map((item: PaperJob, index: number) => (
+              <div className="relative" key={item.id}>
+                <ContentList
+                  {...item}
+                  style={
+                    index % 2 === 0 ? "sm:flex-row-reverse" : "sm:flex-row"
+                  }
+                  isShowProps={isShow[item.id]}
+                  handleDisplay={() => toggleVisibility(item.id)}
+                />
+                <ModalCard
+                  {...item}
+                  isShowProps={isShow[item.id]}
+                  handleDisplay={() => toggleVisibility(item.id)}
+                />
+              </div>
+            ))}
+          </ul>
         </section>
       </main>
       <Footer />
