@@ -1,71 +1,6 @@
 import Link from "next/link";
-import iconDemoCafeLogo96px from "public/DemoSite/iconDemoCafeLogo96px.svg";
-import iconDemoCafeHome48px from "public/DemoSite/iconDemoCafeHome48px.svg";
-import iconDemoCafeMenu48px from "public/DemoSite/iconDemoCafeMenu48px.svg";
-import iconDemoCafeStory48px from "public/DemoSite/iconDemoCafeStory48px.svg";
-import iconDemoCafeMap48px from "public/DemoSite/iconDemoCafeMap48px.svg";
-import iconDemoCafeInstagram48px from "public/DemoSite/iconDemoCafeInstagram48px.svg";
-import iconDemoCafeArrowUp48px from "public/DemoSite/iconDemoCafeArrowUp48px.svg";
-
-type Icon = {
-  id: number;
-  iconSvg: React.FC;
-  text: string;
-  hrefSection: string;
-  applicableSections: string[];
-};
-
-const navIcons: Icon[] = [
-  {
-    id: 0,
-    iconSvg: iconDemoCafeLogo96px,
-    text: "logo",
-    hrefSection: "/demoCafe",
-    applicableSections: ["headerLogo"],
-  },
-  {
-    id: 1,
-    iconSvg: iconDemoCafeHome48px,
-    text: "home",
-    hrefSection: "/demoCafe",
-    applicableSections: ["headerNav"],
-  },
-  {
-    id: 2,
-    iconSvg: iconDemoCafeMenu48px,
-    text: "menu",
-    hrefSection: "/demoCafe/#areaMenu",
-    applicableSections: ["headerNav"],
-  },
-  {
-    id: 3,
-    iconSvg: iconDemoCafeStory48px,
-    text: "story",
-    hrefSection: "/demoCafe/#areaStory",
-    applicableSections: ["headerNav"],
-  },
-  {
-    id: 4,
-    iconSvg: iconDemoCafeMap48px,
-    text: "map",
-    hrefSection: "/demoCafe/#areaMap",
-    applicableSections: ["headerNav"],
-  },
-  {
-    id: 5,
-    iconSvg: iconDemoCafeInstagram48px,
-    text: "Instagram",
-    hrefSection: "/demoCafe/#areaMap",
-    applicableSections: ["sectionMap"],
-  },
-  {
-    id: 6,
-    iconSvg: iconDemoCafeArrowUp48px,
-    text: "arrowUp",
-    hrefSection: "/demoCafe/#areaTop",
-    applicableSections: ["main"],
-  },
-];
+import MenuBlock from "@/components/DemoSite/demoCafeMenuBlock";
+import navIcons from "@/data/DemoSite/demoCafeIconData";
 
 export default function DemoCafe() {
   return (
@@ -110,9 +45,48 @@ export default function DemoCafe() {
           </nav>
         </div>
         <main>
-          <section id="mainVisual"></section>
-          <section id="areaMenu"></section>
-          <section id="areaStory"></section>
+          <section id="mainVisual">
+            <div className="mx-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="h-[100vh] w-auto object-cover"
+                src="/DemoSite/imgDemoCafeMainVisual.jpg"
+                alt="mainVisual"
+                width="1440"
+                height="1920"
+              />
+              <div className="absolute bottom-[12vh] flex w-full flex-col items-end bg-white bg-opacity-60 px-4 backdrop-blur-sm">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  className="drop-shadow-md"
+                  src="/DemoSite/iconDemoCafeLogo96px.svg"
+                  alt="logo"
+                  width={96}
+                  height={96}
+                />
+                <h1 className="relative -top-4 z-10 mx-2 h-8 text-4xl text-[#FFCA99] drop-shadow-md">
+                  Demo Cafe
+                </h1>
+              </div>
+            </div>
+          </section>
+          <section id="areaMenu" className="my-20 flex flex-col items-center">
+            <div className="relative mb-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/DemoSite/imgDemoCafeMenu.jpg"
+                alt="menuImg"
+                width="1280"
+                height="1920"
+              />
+              <h1 className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-white">
+                Menu
+              </h1>
+            </div>
+            <MenuBlock menuClassification="drink" />
+            <MenuBlock menuClassification="food" />
+            <MenuBlock menuClassification="other" />
+          </section>
           <section id="areaMap"></section>
         </main>
       </header>
