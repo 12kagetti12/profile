@@ -112,7 +112,7 @@ export default function DemoCafe() {
               テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
             </p>
           </div>
-          <button className="rounded-sm bg-[#FFCA99] p-2 align-middle text-white">
+          <button className="rounded-full bg-[#FFCA99] px-8 py-1 align-middle text-white">
             more
           </button>
         </section>
