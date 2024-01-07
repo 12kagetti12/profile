@@ -8,9 +8,7 @@ const MenuBlock = ({ menuClassification }: Props) => {
   );
   return (
     <div className="flex flex-col items-center">
-      <h2 className="m-4 h-20 capitalize text-[#614D3A] drop-shadow-md after:z-10 after:mt-1 after:block after:h-4 after:w-full after:rounded-md after:bg-[#FFCA99] after:content-['']">
-        {menuClassification}
-      </h2>
+      <h2 className="demoCafeStyleH2">{menuClassification}</h2>
       <ul className="flex w-80 flex-col">
         {matchMenus.map((item) => (
           <li key={item.id} className="relative">
