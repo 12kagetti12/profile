@@ -44,6 +44,7 @@ export default function DemoCafe() {
             </ul>
           </nav>
         </div>
+      </header>
         <main>
           <section id="mainVisual">
             <div className="mx-0">
@@ -54,17 +55,18 @@ export default function DemoCafe() {
                 alt="mainVisual"
                 width="1440"
                 height="1920"
+              loading="lazy"
               />
-              <div className="absolute bottom-[12vh] flex w-full flex-col items-end bg-white bg-opacity-60 px-4 backdrop-blur-sm">
+            <div className="absolute bottom-[12vh] flex w-full flex-col items-end bg-[#FFCA99] bg-opacity-60 px-4 backdrop-blur-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  className="drop-shadow-md"
+                className="fill-current drop-shadow-md"
                   src="/DemoSite/iconDemoCafeLogo96px.svg"
                   alt="logo"
                   width={96}
                   height={96}
                 />
-                <h1 className="relative -top-4 z-10 mx-2 h-8 text-4xl text-[#FFCA99] drop-shadow-md">
+              <h1 className="relative -top-4 z-10 mx-2 h-8 text-4xl text-white drop-shadow-md">
                   Demo Cafe
                 </h1>
               </div>
