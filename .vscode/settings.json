@@ -6,5 +6,5 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": ["svgr", "NAVI"]
+  "cSpell.words": ["googlemaps", "NAVI", "svgr"]
 }
