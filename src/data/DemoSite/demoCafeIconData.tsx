@@ -3,7 +3,6 @@ import iconDemoCafeHome48px from "public/DemoSite/iconDemoCafeHome48px.svg";
 import iconDemoCafeMenu48px from "public/DemoSite/iconDemoCafeMenu48px.svg";
 import iconDemoCafeStory48px from "public/DemoSite/iconDemoCafeStory48px.svg";
 import iconDemoCafeMap48px from "public/DemoSite/iconDemoCafeMap48px.svg";
-import iconDemoCafeInstagram48px from "public/DemoSite/iconDemoCafeInstagram48px.svg";
 import iconDemoCafeArrowUp48px from "public/DemoSite/iconDemoCafeArrowUp48px.svg";
 
 type Icon = {
@@ -52,13 +51,6 @@ const navIcons: Icon[] = [
   },
   {
     id: 5,
-    iconSvg: iconDemoCafeInstagram48px,
-    text: "Instagram",
-    hrefSection: "/demoCafe/#areaMap",
-    applicableSections: ["sectionMap"],
-  },
-  {
-    id: 6,
     iconSvg: iconDemoCafeArrowUp48px,
     text: "arrowUp",
     hrefSection: "/demoCafe/#areaTop",
