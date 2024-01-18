@@ -24,7 +24,7 @@ const paperJobs: PaperJob[] = [
     imgSrc: "#",
     client: "Demo",
     text: "#",
-    url: "#",
+    url: "/demoCafe",
   },
 ];
 
