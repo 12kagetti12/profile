@@ -89,7 +89,7 @@ export default function DemoCafe() {
           <div className="mx-0 h-[100vh]">
             <img
               className="h-[100vh] w-auto object-cover"
-              src="/DemoSite/imgDemoCafeMainVisual.jpg"
+              src="/DemoSite/imgDemoCafeMainVisual.JPG"
               alt="mainVisual"
               width="1440"
               height="1920"
