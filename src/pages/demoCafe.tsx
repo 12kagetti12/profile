@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import MenuBlock from "@/components/DemoSite/demoCafeMenuBlock";
 import navIcons from "@/data/DemoSite/demoCafeIconData";
+import Icon from "@/data/DemoSite/demoCafeIconComponent";
 import Button from "@/components/DemoSite/demoCafeButton";
 import {
   APIProvider,
@@ -9,12 +11,28 @@ import {
   Marker,
   useMarkerRef,
 } from "@vis.gl/react-google-maps";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const mapAPIkey: string = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY;
 const mapID: string = process.env.NEXT_PUBLIC_MAP_ID;
 
 export default function DemoCafe() {
+  const useInViewOptions = { threshold: 0, rootMargin: "-20% 0px" };
+  const { ref: areaTopRef, inView: InViewTop } = useInView(useInViewOptions);
+  const { ref: areaMenuRef, inView: InViewMenu } = useInView(useInViewOptions);
+  const { ref: areaStoryRef, inView: InViewStory } =
+    useInView(useInViewOptions);
+  const { ref: areaMapRef, inView: InViewMap } = useInView(useInViewOptions);
+  const [iconState, setIconState] = useState([false, false, false, false]);
+  useEffect(() => {
+    const prevIconState = [InViewTop, InViewMenu, InViewStory, InViewMap];
+    const lastTrueIndex = prevIconState.lastIndexOf(true);
+    const updatedIconState = [false, false, false, false];
+    updatedIconState[lastTrueIndex] = true;
+    setIconState(updatedIconState);
+  }, [InViewTop, InViewMenu, InViewStory, InViewMap]);
+
   const position = { lat: 35.65720571170869, lng: 139.6677287383595 };
   const [markerRef, marker] = useMarkerRef();
   const [infoWindowShow, setInfoWindowShow] = useState(true);
@@ -27,7 +45,6 @@ export default function DemoCafe() {
         <div>
           <h1 className="hidden">
             <Link href="/demoCafe" scroll={false}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img className="w-fit" src="#" alt="DemoCafeLogo" />
             </Link>
           </h1>
@@ -47,7 +64,11 @@ export default function DemoCafe() {
                     }
                   >
                     <Link
-                      className="m-auto flex flex-col items-center justify-center fill-current"
+                      className={
+                        iconState[Number(icon.id) - 1]
+                          ? "m-auto flex flex-col items-center justify-center text-[#FFCA99]"
+                          : "m-auto flex flex-col items-center justify-center stroke-[#FFCA99] stroke-2 text-white"
+                      }
                       href={icon.hrefSection}
                       scroll={false}
                     >
@@ -64,9 +85,8 @@ export default function DemoCafe() {
         </div>
       </header>
       <main>
-        <section id="mainVisual">
-          <div className="mx-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
+        <section id="mainVisual" ref={areaTopRef}>
+          <div className="mx-0 h-[100vh]">
             <img
               className="h-[100vh] w-auto object-cover"
               src="/DemoSite/imgDemoCafeMainVisual.jpg"
@@ -76,7 +96,6 @@ export default function DemoCafe() {
               loading="lazy"
             />
             <div className="absolute bottom-[12vh] flex w-full flex-col items-end bg-[#FFCA99] bg-opacity-60 px-4 backdrop-blur-sm">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className="fill-current drop-shadow-md"
                 src="/DemoSite/iconDemoCafeLogo96px.svg"
@@ -90,9 +109,12 @@ export default function DemoCafe() {
             </div>
           </div>
         </section>
-        <section id="areaMenu" className="my-20 flex flex-col items-center">
+        <section
+          id="areaMenu"
+          className="my-20 flex flex-col items-center"
+          ref={areaMenuRef}
+        >
           <div className="relative mb-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/DemoSite/imgDemoCafeMenu.jpg"
               alt="menuImg"
@@ -108,9 +130,12 @@ export default function DemoCafe() {
           <MenuBlock menuClassification="food" />
           <MenuBlock menuClassification="other" />
         </section>
-        <section id="areaStory" className="my-20 flex flex-col items-center">
+        <section
+          id="areaStory"
+          className="my-20 flex flex-col items-center"
+          ref={areaStoryRef}
+        >
           <div className="relative mb-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/DemoSite/imgDemoCafeStory.jpg"
               alt="storyImg"
@@ -133,9 +158,12 @@ export default function DemoCafe() {
           </div>
           <Button onClick={() => console.log("Hello world")}>more</Button>
         </section>
-        <section id="areaMap" className="my-20 flex flex-col items-center">
+        <section
+          id="areaMap"
+          className="my-20 flex flex-col items-center"
+          ref={areaMapRef}
+        >
           <div className="relative mb-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/DemoSite/imgDemoCafeMap.jpg"
               alt="mapImg"
@@ -165,12 +193,7 @@ export default function DemoCafe() {
                 {infoWindowShow && (
                   <InfoWindow anchor={marker} onCloseClick={closeInfoWindow}>
                     <div className="flex flex-col items-center">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/DemoSite/iconDemoCafeMenu48px.svg"
-                        alt="demoCafeLogo"
-                        loading="lazy"
-                      />
+                      <Icon name="Menu" className="text-[#FFCA99]" />
                       <h2 className="align-text-top text-2xl text-[#FFCA99]">
                         Demo Cafe
                       </h2>
@@ -195,12 +218,13 @@ export default function DemoCafe() {
             <dl className="flex text-left">
               <dt className="w-20 text-[#FFCA99]">SNS</dt>
               <dd>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/DemoSite/iconDemoCafeInstagram48px.png"
                   alt="InstagramIcon"
                   loading="lazy"
-                ></img>
+                  width="24"
+                  height="24"
+                />
               </dd>
             </dl>
           </address>
