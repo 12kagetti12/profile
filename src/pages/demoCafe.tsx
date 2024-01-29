@@ -91,7 +91,7 @@ export default function DemoCafe() {
               className="h-[100vh] w-auto object-cover"
               src="/DemoSite/imgDemoCafeMainVisual.jpg"
               alt="mainVisual"
-              width="1440"
+              width="1280"
               height="1920"
               loading="lazy"
             />
