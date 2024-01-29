@@ -229,6 +229,35 @@ export default function DemoCafe() {
             </dl>
           </address>
         </section>
+        <img
+          className="h-[100vh] w-auto object-cover"
+          src="/DemoSite/imgDemoCafeMainVisual.jpg"
+          alt="mainVisual"
+          width="1440"
+          height="1920"
+          loading="lazy"
+        />
+        <img
+          src="/DemoSite/imgDemoCafeMenu.jpg"
+          alt="menuImg"
+          width="1280"
+          height="1920"
+          loading="lazy"
+        />
+        <img
+          src="/DemoSite/imgDemoCafeStory.jpg"
+          alt="storyImg"
+          width="1920"
+          height="1280"
+          loading="lazy"
+        />
+        <img
+          src="/DemoSite/imgDemoCafeMap.jpg"
+          alt="mapImg"
+          width="1920"
+          height="1280"
+          loading="lazy"
+        />
       </main>
     </>
   );
