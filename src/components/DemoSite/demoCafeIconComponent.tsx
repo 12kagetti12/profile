@@ -1,6 +1,11 @@
+import Logo from "public/DemoSite/iconDemoCafeLogo96px.svg";
 import Menu from "public/DemoSite/iconDemoCafeMenu48px.svg";
+import Home from "public/DemoSite/iconDemoCafeHome48px.svg";
+import Story from "public/DemoSite/iconDemoCafeStory48px.svg";
+import Map from "public/DemoSite/iconDemoCafeMap48px.svg";
+import ArrowUp from "public/DemoSite/iconDemoCafeArrowUp48px.svg";
 
-const icons = { Menu };
+const icons = { Logo, Home, Menu, Story, Map, ArrowUp };
 
 type Name = keyof typeof icons;
 type Props = {

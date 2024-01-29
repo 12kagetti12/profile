@@ -2,7 +2,7 @@
 import Link from "next/link";
 import MenuBlock from "@/components/DemoSite/demoCafeMenuBlock";
 import navIcons from "@/data/DemoSite/demoCafeIconData";
-import Icon from "@/data/DemoSite/demoCafeIconComponent";
+import Icon from "@/components/DemoSite/demoCafeIconComponent";
 import Button from "@/components/DemoSite/demoCafeButton";
 import {
   APIProvider,
@@ -229,34 +229,6 @@ export default function DemoCafe() {
             </dl>
           </address>
         </section>
-        <img
-          src="/DemoSite/imgDemoCafeHome.jpg"
-          alt="mainVisual"
-          width="1440"
-          height="1920"
-          loading="lazy"
-        />
-        <img
-          src="/DemoSite/imgDemoCafeMenu.jpg"
-          alt="menuImg"
-          width="1280"
-          height="1920"
-          loading="lazy"
-        />
-        <img
-          src="/DemoSite/imgDemoCafeHome.jpg"
-          alt="storyImg"
-          width="1920"
-          height="1280"
-          loading="lazy"
-        />
-        <img
-          src="/DemoSite/imgDemoCafeMap.jpg"
-          alt="mapImg"
-          width="1920"
-          height="1280"
-          loading="lazy"
-        />
       </main>
     </>
   );
