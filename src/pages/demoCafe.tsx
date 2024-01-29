@@ -244,7 +244,7 @@ export default function DemoCafe() {
           loading="lazy"
         />
         <img
-          src="/DemoSite/imgDemoCafeStory.jpg"
+          src="/DemoSite/imgDemoCafeMainVisual.jpg"
           alt="storyImg"
           width="1920"
           height="1280"
