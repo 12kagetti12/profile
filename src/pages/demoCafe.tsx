@@ -89,7 +89,7 @@ export default function DemoCafe() {
           <div className="mx-0 h-[100vh]">
             <img
               className="h-[100vh] w-auto object-cover"
-              src="/DemoSite/imgDemoCafeMainVisual.jpg"
+              src="/DemoSite/imgDemoCafeHome.jpg"
               alt="mainVisual"
               width="1280"
               height="1920"
@@ -230,7 +230,7 @@ export default function DemoCafe() {
           </address>
         </section>
         <img
-          src="/DemoSite/imgDemoCafeMainVisual.jpg"
+          src="/DemoSite/imgDemoCafeHome.jpg"
           alt="mainVisual"
           width="1440"
           height="1920"
@@ -244,7 +244,7 @@ export default function DemoCafe() {
           loading="lazy"
         />
         <img
-          src="/DemoSite/imgDemoCafeMainVisual.jpg"
+          src="/DemoSite/imgDemoCafeHome.jpg"
           alt="storyImg"
           width="1920"
           height="1280"
