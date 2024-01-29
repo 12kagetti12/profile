@@ -230,7 +230,6 @@ export default function DemoCafe() {
           </address>
         </section>
         <img
-          className="h-[100vh] w-auto object-cover"
           src="/DemoSite/imgDemoCafeMainVisual.jpg"
           alt="mainVisual"
           width="1440"
