@@ -33,6 +33,14 @@ export default function DemoCafe() {
     setIconState(updatedIconState);
   }, [InViewTop, InViewMenu, InViewStory, InViewMap]);
 
+  const storyContentsDisplay: boolean[] = [false, false, false];
+  const [displayShow, setDisplayShow] = useState(storyContentsDisplay);
+  const handleClick = (index: number) => {
+    const newDisplayShowState: boolean[] = [...displayShow];
+    newDisplayShowState[index] = !newDisplayShowState[index];
+    setDisplayShow(newDisplayShowState);
+  };
+
   const position = { lat: 35.65720571170869, lng: 139.6677287383595 };
   const [markerRef, marker] = useMarkerRef();
   const [infoWindowShow, setInfoWindowShow] = useState(true);
@@ -48,7 +56,7 @@ export default function DemoCafe() {
               <img className="w-fit" src="#" alt="DemoCafeLogo" />
             </Link>
           </h1>
-          <nav className="fixed bottom-0 z-30 flex h-[10vh] w-full items-center bg-white">
+          <nav className="fixed bottom-0 z-30 flex h-16 w-full items-center bg-white">
             <ul
               className="flex w-full items-center justify-around"
               id="scroll_nav"
@@ -147,16 +155,27 @@ export default function DemoCafe() {
               story
             </h1>
           </div>
-          <div className="m-4 flex flex-col items-center">
+          <div className="relative m-4 flex flex-col items-center">
             <h2 className="demoCafeStyleH2">coffee</h2>
-            <p className="text-justify indent-4 text-[#614D3A]">
-              テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
-            </p>
-            <p className="mt-2 text-justify indent-4 text-[#614D3A]">
-              テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
-            </p>
+            <div
+              key={0}
+              className={
+                displayShow[0]
+                  ? "max-h-[100vh] overflow-y-hidden transition-[max-height] duration-1000 ease-in"
+                  : "max-h-[10vh] overflow-y-hidden transition-[max-height] duration-1000 ease-out after:absolute after:bottom-0 after:left-0 after:z-10 after:inline-block after:h-4 after:w-full after:bg-white/70  after:content-['']"
+              }
+            >
+              <p className="text-justify indent-4 text-[#614D3A]">
+                テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+              </p>
+              <p className="mt-2 text-justify indent-4 text-[#614D3A]">
+                テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+              </p>
+            </div>
           </div>
-          <Button onClick={() => console.log("Hello world")}>more</Button>
+          <Button onClick={() => handleClick(0)}>
+            {displayShow[0] ? "close" : "more"}
+          </Button>
         </section>
         <section
           id="areaMap"
