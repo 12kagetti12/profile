@@ -161,8 +161,8 @@ export default function DemoCafe() {
               key={0}
               className={
                 displayShow[0]
-                  ? "max-h-[100vh] overflow-y-hidden transition-[max-height] duration-1000 ease-in"
-                  : "max-h-[10vh] overflow-y-hidden transition-[max-height] duration-1000 ease-out after:absolute after:bottom-0 after:left-0 after:z-10 after:inline-block after:h-4 after:w-full after:bg-white/70  after:content-['']"
+                  ? "max-h-[100vh] overflow-y-hidden transition-all duration-1000 ease-in after:opacity-0 after:transition-opacity after:duration-1000"
+                  : "max-h-[20vh] overflow-y-hidden transition-all duration-1000 ease-out after:absolute after:bottom-0 after:left-0 after:z-10 after:inline-block after:h-8 after:w-full after:bg-gradient-to-t after:from-white after:to-white/70 after:opacity-100 after:transition-opacity after:duration-1000 after:content-['']"
               }
             >
               <p className="text-justify indent-4 text-[#614D3A]">
