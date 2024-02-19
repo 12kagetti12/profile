@@ -11,7 +11,7 @@ import {
   Marker,
   useMarkerRef,
 } from "@vis.gl/react-google-maps";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 const mapAPIkey: string = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY;
@@ -32,6 +32,49 @@ export default function DemoCafe() {
     updatedIconState[lastTrueIndex] = true;
     setIconState(updatedIconState);
   }, [InViewTop, InViewMenu, InViewStory, InViewMap]);
+
+  const menuImageRef = useRef<HTMLDivElement>(null);
+  const storyImageRef = useRef<HTMLDivElement>(null);
+  const mapImageRef = useRef<HTMLDivElement>(null);
+  const [menuImageHeight, setMenuImageHeight] = useState("h-[70vh]");
+  const [storyImageHeight, setStoryImageHeight] = useState("h-[70vh]");
+  const [maoImageHeight, setMapImageHeight] = useState("h-[70vh]");
+
+  useEffect(() => {
+    const imageInViewOptions = {
+      rootMargin: "0% 0% -50% 0%",
+      threshold: 0.5,
+    };
+    const observeElement = (
+      elementRef: React.MutableRefObject<HTMLDivElement>,
+      setHeight: React.Dispatch<React.SetStateAction<string>>,
+    ) => {
+      if (!elementRef.current) return undefined;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const isIntersectingFromBelow: boolean =
+            entry.boundingClientRect.y > 0;
+          if (entry.isIntersecting && isIntersectingFromBelow) {
+            setHeight("h-[10vh]");
+          } else if (!entry.isIntersecting && !isIntersectingFromBelow) {
+            setHeight("h-[10vh]");
+          } else {
+            setHeight("h-[70vh]");
+          }
+        });
+      }, imageInViewOptions);
+
+      observer.observe(elementRef.current);
+
+      return () => {
+        observer.disconnect();
+      };
+    };
+    observeElement(menuImageRef, setMenuImageHeight);
+    observeElement(storyImageRef, setStoryImageHeight);
+    observeElement(mapImageRef, setMapImageHeight);
+  }, [menuImageRef, storyImageRef, mapImageRef]);
 
   const storyContentsDisplay: boolean[] = [false, false, false];
   const [displayShow, setDisplayShow] = useState(storyContentsDisplay);
@@ -56,7 +99,7 @@ export default function DemoCafe() {
               <img className="w-fit" src="#" alt="DemoCafeLogo" />
             </Link>
           </h1>
-          <nav className="fixed bottom-0 z-30 flex h-16 w-full items-center bg-white">
+          <nav className="fixed bottom-0 z-30 flex h-16 w-full items-center bg-white py-4">
             <ul
               className="flex w-full items-center justify-around"
               id="scroll_nav"
@@ -96,7 +139,7 @@ export default function DemoCafe() {
         <section id="mainVisual" ref={areaTopRef}>
           <div className="mx-0 h-[100vh]">
             <img
-              className="h-[100vh] w-auto object-cover"
+              className="h-[100vh] w-auto object-cover sm:w-full"
               src="/DemoSite/imgDemoCafeHome.jpg"
               alt="mainVisual"
               width="1280"
@@ -122,8 +165,12 @@ export default function DemoCafe() {
           className="my-20 flex flex-col items-center"
           ref={areaMenuRef}
         >
-          <div className="relative mb-4">
+          <div
+            className={`relative mb-4 transition-[height] ${menuImageHeight} w-full delay-100 duration-1000`}
+            ref={menuImageRef}
+          >
             <img
+              className="absolute h-full w-full object-cover"
               src="/DemoSite/imgDemoCafeMenu.jpg"
               alt="menuImg"
               width="1280"
@@ -143,8 +190,12 @@ export default function DemoCafe() {
           className="my-20 flex flex-col items-center"
           ref={areaStoryRef}
         >
-          <div className="relative mb-4">
+          <div
+            className={`relative mb-4 transition-[height] ${storyImageHeight} w-full delay-100 duration-1000`}
+            ref={storyImageRef}
+          >
             <img
+              className="absolute h-full w-full object-cover"
               src="/DemoSite/imgDemoCafeStory.jpg"
               alt="storyImg"
               width="1920"
@@ -182,8 +233,12 @@ export default function DemoCafe() {
           className="my-20 flex flex-col items-center"
           ref={areaMapRef}
         >
-          <div className="relative mb-4">
+          <div
+            className={`relative mb-4 transition-[height] ${maoImageHeight} w-full delay-100 duration-1000`}
+            ref={mapImageRef}
+          >
             <img
+              className="absolute h-full w-full object-cover"
               src="/DemoSite/imgDemoCafeMap.jpg"
               alt="mapImg"
               width="1920"
