@@ -38,12 +38,12 @@ export default function DemoCafe() {
   const mapImageRef = useRef<HTMLDivElement>(null);
   const [menuImageHeight, setMenuImageHeight] = useState("h-[70vh]");
   const [storyImageHeight, setStoryImageHeight] = useState("h-[70vh]");
-  const [maoImageHeight, setMapImageHeight] = useState("h-[70vh]");
+  const [mapImageHeight, setMapImageHeight] = useState("h-[70vh]");
 
   useEffect(() => {
     const imageInViewOptions = {
-      rootMargin: "0% 0% -50% 0%",
-      threshold: 0.5,
+      rootMargin: "-20% 0% -10% 0%",
+      threshold: Array.from({ length: 100 }, (_, index) => index / 100),
     };
     const observeElement = (
       elementRef: React.MutableRefObject<HTMLDivElement>,
@@ -53,14 +53,16 @@ export default function DemoCafe() {
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          const isIntersectingFromBelow: boolean =
-            entry.boundingClientRect.y > 0;
-          if (entry.isIntersecting && isIntersectingFromBelow) {
-            setHeight("h-[10vh]");
-          } else if (!entry.isIntersecting && !isIntersectingFromBelow) {
+          const isAboveRoot: boolean =
+            entry.boundingClientRect.top <= entry.rootBounds!.top;
+          const isBelowRoot: boolean =
+            entry.boundingClientRect.bottom > entry.rootBounds!.bottom;
+          if (isBelowRoot) {
+            setHeight("h-[70vh]");
+          } else if (isAboveRoot) {
             setHeight("h-[10vh]");
           } else {
-            setHeight("h-[70vh]");
+            setHeight("h-[10vh]");
           }
         });
       }, imageInViewOptions);
@@ -234,7 +236,7 @@ export default function DemoCafe() {
           ref={areaMapRef}
         >
           <div
-            className={`relative mb-4 transition-[height] ${maoImageHeight} w-full delay-100 duration-1000`}
+            className={`relative mb-4 transition-[height] ${mapImageHeight} w-full delay-100 duration-1000`}
             ref={mapImageRef}
           >
             <img
@@ -278,7 +280,7 @@ export default function DemoCafe() {
               </Map>
             </APIProvider>
           </div>
-          <address className="flex flex-col items-start">
+          <address className="mb-4 flex flex-col items-start">
             <dl className="flex text-left">
               <dt className="w-20 text-[#FFCA99]">address</dt>
               <dd className="max-w-[50vw] break-words text-[#614D3A]">
