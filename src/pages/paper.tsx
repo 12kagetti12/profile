@@ -4,7 +4,9 @@ import Footer from "@/components/Footer";
 import { useState, useRef, useCallback, useEffect } from "react";
 import ContentList from "@/components/ContentList";
 import useIntersectionObserver from "@/hocks/useHandleIsShow";
-import ModalCard from "@/components/ModalCard";
+import dynamic from "next/dynamic";
+
+const ModalCard = dynamic(() => import("@/components/ModalCard"));
 
 type PaperJob = {
   id: number;
