@@ -143,7 +143,7 @@ export default function DemoCafe() {
         <section id="mainVisual" ref={areaTopRef}>
           <div className="mx-0 h-[100vh]">
             <img
-              className="h-[100vh] w-auto object-cover sm:w-full"
+              className="h-[100vh] w-full object-cover"
               src="/DemoSite/imgDemoCafeMainVisual_sm.webp"
               alt="mainVisual"
               width="1280"
