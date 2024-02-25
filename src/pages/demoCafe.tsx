@@ -25,6 +25,7 @@ export default function DemoCafe() {
     useInView(useInViewOptions);
   const { ref: areaMapRef, inView: InViewMap } = useInView(useInViewOptions);
   const [iconState, setIconState] = useState([false, false, false, false]);
+
   useEffect(() => {
     const prevIconState = [InViewTop, InViewMenu, InViewStory, InViewMap];
     const lastTrueIndex = prevIconState.lastIndexOf(true);
@@ -42,7 +43,7 @@ export default function DemoCafe() {
 
   useEffect(() => {
     const imageInViewOptions = {
-      rootMargin: "-20% 0% -10% 0%",
+      rootMargin: "-20% 0% 10% 0%",
       threshold: Array.from({ length: 100 }, (_, index) => index / 100),
     };
     const observeElement = (
@@ -92,6 +93,7 @@ export default function DemoCafe() {
   const toggleInfoWindow = () =>
     setInfoWindowShow((previousState) => !previousState);
   const closeInfoWindow = () => setInfoWindowShow(false);
+
   return (
     <>
       <header id="areaTop">
@@ -142,7 +144,7 @@ export default function DemoCafe() {
           <div className="mx-0 h-[100vh]">
             <img
               className="h-[100vh] w-auto object-cover sm:w-full"
-              src="/DemoSite/imgDemoCafeHome.jpg"
+              src="/DemoSite/imgDemoCafeMainVisual_sm.webp"
               alt="mainVisual"
               width="1280"
               height="1920"
@@ -173,7 +175,7 @@ export default function DemoCafe() {
           >
             <img
               className="absolute h-full w-full object-cover"
-              src="/DemoSite/imgDemoCafeMenu.jpg"
+              src="/DemoSite/imgDemoCafeMenu_sm.webp"
               alt="menuImg"
               width="1280"
               height="1920"
@@ -241,7 +243,7 @@ export default function DemoCafe() {
           >
             <img
               className="absolute h-full w-full object-cover"
-              src="/DemoSite/imgDemoCafeMap.jpg"
+              src="/DemoSite/imgDemoCafeMap_sm.webp"
               alt="mapImg"
               width="1920"
               height="1280"
