@@ -142,14 +142,30 @@ export default function DemoCafe() {
       <main>
         <section id="mainVisual" ref={areaTopRef}>
           <div className="mx-0 h-[100vh]">
-            <img
-              className="h-[100vh] w-full object-cover"
-              src="/DemoSite/imgDemoCafeMainVisual_sm.webp"
-              alt="mainVisual"
-              width="1280"
-              height="1920"
-              loading="lazy"
-            />
+            <picture className="h-[100vh] w-[100vw]">
+              <source
+                className="h-full w-full object-cover"
+                media="(max-width: 640px)"
+                srcSet="/DemoSite/imgDemoCafeMainVisual_sm.webp 640w"
+                width="640"
+                height="1138"
+              />
+              <source
+                className="h-full w-full object-cover"
+                media="(max-width: 1920px)"
+                srcSet="/DemoSite/imgDemoCafeMainVisual_xl.webp 1920w"
+                width="1920"
+                height="1080"
+              />
+              <img
+                className="h-full w-full object-cover"
+                src="/DemoSite/imgDemoCafeMainVisual_xl.jpg"
+                alt="mainVisual"
+                width="1920"
+                height="1080"
+                loading="lazy"
+              />
+            </picture>
             <div className="absolute bottom-[12vh] flex w-full flex-col items-end bg-[#FFCA99] bg-opacity-60 px-4 backdrop-blur-sm">
               <img
                 className="fill-current drop-shadow-md"
@@ -173,14 +189,30 @@ export default function DemoCafe() {
             className={`relative mb-4 transition-[height] ${menuImageHeight} w-full delay-100 duration-1000`}
             ref={menuImageRef}
           >
-            <img
-              className="absolute h-full w-full object-cover"
-              src="/DemoSite/imgDemoCafeMenu_sm.webp"
-              alt="menuImg"
-              width="1280"
-              height="1920"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                className="absolute h-full w-full object-cover"
+                media="(max-width: 640px)"
+                srcSet="/DemoSite/imgDemoCafeMenu_sm.webp 640w"
+                width="640"
+                height="1138"
+              />
+              <source
+                className="absolute h-full w-full object-cover"
+                media="(max-width: 1920px)"
+                srcSet="/DemoSite/imgDemoCafeMenu_xl.webp 1920w"
+                width="1920"
+                height="1280"
+              />
+              <img
+                className="absolute h-full w-full object-cover"
+                src="/DemoSite/imgDemoCafeMenu_xl.jpg"
+                alt="menuImg"
+                width="1280"
+                height="1920"
+                loading="lazy"
+              />
+            </picture>
             <h1 className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-white">
               Menu
             </h1>
@@ -198,14 +230,30 @@ export default function DemoCafe() {
             className={`relative mb-4 transition-[height] ${storyImageHeight} w-full delay-100 duration-1000`}
             ref={storyImageRef}
           >
-            <img
-              className="absolute h-full w-full object-cover"
-              src="/DemoSite/imgDemoCafeStory.jpg"
-              alt="storyImg"
-              width="1920"
-              height="1280"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                className="absolute h-full w-full object-cover"
+                media="(max-width: 640px)"
+                srcSet="/DemoSite/imgDemoCafeStory_sm.webp 640w"
+                width="640"
+                height="420"
+              />
+              <source
+                className="absolute h-full w-full object-cover"
+                media="(max-width: 1920px)"
+                srcSet="/DemoSite/imgDemoCafeStory_xl.webp 1920w"
+                width="1920"
+                height="1280"
+              />
+              <img
+                className="absolute h-full w-full object-cover"
+                src="/DemoSite/imgDemoCafeStory_xl.jpg"
+                alt="storyImg"
+                width="1920"
+                height="1280"
+                loading="lazy"
+              />
+            </picture>
             <h1 className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 capitalize text-white">
               story
             </h1>
@@ -241,14 +289,30 @@ export default function DemoCafe() {
             className={`relative mb-4 transition-[height] ${mapImageHeight} w-full delay-100 duration-1000`}
             ref={mapImageRef}
           >
-            <img
-              className="absolute h-full w-full object-cover"
-              src="/DemoSite/imgDemoCafeMap_sm.webp"
-              alt="mapImg"
-              width="1920"
-              height="1280"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                className="absolute h-full w-full object-cover"
+                media="(max-width: 640px)"
+                srcSet="/DemoSite/imgDemoCafeMap_sm.webp 640w"
+                width="640"
+                height="420"
+              />
+              <source
+                className="absolute h-full w-full object-cover"
+                media="(max-width: 1920px)"
+                srcSet="/DemoSite/imgDemoCafeMap_xl copy.webp 1920w"
+                width="1920"
+                height="1280"
+              />
+              <img
+                className="absolute h-full w-full object-cover"
+                src="/DemoSite/imgDemoCafeMap_xl.jpg"
+                alt="mapImg"
+                width="1920"
+                height="1280"
+                loading="lazy"
+              />
+            </picture>
             <h1 className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-white">
               Map
             </h1>
