@@ -1,9 +1,9 @@
 import Logo from "public/DemoSite/iconDemoCafeLogo96px.svg";
-import Menu from "public/DemoSite/iconDemoCafeMenu48px.svg";
-import Home from "public/DemoSite/iconDemoCafeHome48px.svg";
-import Story from "public/DemoSite/iconDemoCafeStory48px.svg";
-import Map from "public/DemoSite/iconDemoCafeMap48px.svg";
-import ArrowUp from "public/DemoSite/iconDemoCafeArrowUp48px.svg";
+import Menu from "public/DemoSite/iconDemoCafeMenu32px.svg";
+import Home from "public/DemoSite/iconDemoCafeHome32px.svg";
+import Story from "public/DemoSite/iconDemoCafeStory32px.svg";
+import Map from "public/DemoSite/iconDemoCafeMap32px.svg";
+import ArrowUp from "public/DemoSite/iconDemoCafeArrowUp32px.svg";
 
 const icons = { Logo, Home, Menu, Story, Map, ArrowUp };
 
@@ -14,7 +14,7 @@ type Props = {
   className?: string;
 };
 
-const DEFAULT_SIZE: number = 48;
+const DEFAULT_SIZE: number = 32;
 
 const Icon: React.FC<Props> = ({
   name,

@@ -1,9 +1,9 @@
 import iconDemoCafeLogo96px from "public/DemoSite/iconDemoCafeLogo96px.svg";
-import iconDemoCafeHome48px from "public/DemoSite/iconDemoCafeHome48px.svg";
-import iconDemoCafeMenu48px from "public/DemoSite/iconDemoCafeMenu48px.svg";
-import iconDemoCafeStory48px from "public/DemoSite/iconDemoCafeStory48px.svg";
-import iconDemoCafeMap48px from "public/DemoSite/iconDemoCafeMap48px.svg";
-import iconDemoCafeArrowUp48px from "public/DemoSite/iconDemoCafeArrowUp48px.svg";
+import iconDemoCafeHome32px from "public/DemoSite/iconDemoCafeHome32px.svg";
+import iconDemoCafeMenu32px from "public/DemoSite/iconDemoCafeMenu32px.svg";
+import iconDemoCafeStory32px from "public/DemoSite/iconDemoCafeStory32px.svg";
+import iconDemoCafeMap32px from "public/DemoSite/iconDemoCafeMap32px.svg";
+import iconDemoCafeArrowUp32px from "public/DemoSite/iconDemoCafeArrowUp32px.svg";
 
 type Icon = {
   id: number;
@@ -23,35 +23,35 @@ const navIcons: Icon[] = [
   },
   {
     id: 1,
-    iconSvg: iconDemoCafeHome48px,
+    iconSvg: iconDemoCafeHome32px,
     text: "home",
     hrefSection: "/demoCafe/#areaTop",
     applicableSections: ["headerNav"],
   },
   {
     id: 2,
-    iconSvg: iconDemoCafeMenu48px,
+    iconSvg: iconDemoCafeMenu32px,
     text: "menu",
     hrefSection: "/demoCafe/#areaMenu",
     applicableSections: ["headerNav"],
   },
   {
     id: 3,
-    iconSvg: iconDemoCafeStory48px,
+    iconSvg: iconDemoCafeStory32px,
     text: "story",
     hrefSection: "/demoCafe/#areaStory",
     applicableSections: ["headerNav"],
   },
   {
     id: 4,
-    iconSvg: iconDemoCafeMap48px,
+    iconSvg: iconDemoCafeMap32px,
     text: "map",
     hrefSection: "/demoCafe/#areaMap",
     applicableSections: ["headerNav"],
   },
   {
     id: 5,
-    iconSvg: iconDemoCafeArrowUp48px,
+    iconSvg: iconDemoCafeArrowUp32px,
     text: "arrowUp",
     hrefSection: "/demoCafe/#areaTop",
     applicableSections: ["main"],
