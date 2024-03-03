@@ -16,6 +16,7 @@ import { useInView } from "react-intersection-observer";
 
 const mapAPIkey: string = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY;
 const mapID: string = process.env.NEXT_PUBLIC_MAP_ID;
+const logoIcon = navIcons.find((icon) => icon.text === "logo");
 
 export default function DemoCafe() {
   const useInViewOptions = { threshold: 0, rootMargin: "-20% 0px" };
@@ -96,16 +97,19 @@ export default function DemoCafe() {
 
   return (
     <>
-      <header id="areaTop">
-        <div>
-          <h1 className="hidden">
-            <Link href="/demoCafe" scroll={false}>
-              <img className="w-fit" src="#" alt="DemoCafeLogo" />
+      <header
+        id="header"
+        className="fixed z-30 flex h-0 w-full items-center justify-center px-4 sm:h-16 sm:bg-white sm:px-4"
+      >
+        <div className="flex max-w-screen-lg justify-center sm:z-30 sm:h-fit sm:w-full sm:items-center">
+          <h1 className="z-40 w-14 opacity-0 sm:opacity-100">
+            <Link href="/demoCafe/#areaTop" scroll={false}>
+              <logoIcon.iconSvg />
             </Link>
           </h1>
-          <nav className="fixed bottom-0 z-30 flex h-16 w-full items-center bg-white py-4">
+          <nav className="fixed bottom-0 left-0 z-30 flex h-14 w-full max-w-5xl items-center justify-end bg-white sm:static sm:top-0 sm:bg-opacity-0">
             <ul
-              className="flex w-full items-center justify-around"
+              className="flex h-10 w-full items-center justify-around sm:justify-end"
               id="scroll_nav"
             >
               {navIcons.map((icon) =>
@@ -140,7 +144,7 @@ export default function DemoCafe() {
         </div>
       </header>
       <main>
-        <section id="mainVisual" ref={areaTopRef}>
+        <section id="areaTop" ref={areaTopRef}>
           <div className="mx-0 h-[100vh]">
             <picture className="h-[100vh] w-[100vw]">
               <source

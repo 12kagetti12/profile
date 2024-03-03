@@ -18,7 +18,7 @@ const navIcons: Icon[] = [
     id: 0,
     iconSvg: iconDemoCafeLogo96px,
     text: "logo",
-    hrefSection: "/demoCafe",
+    hrefSection: "/demoCafe/#araTop",
     applicableSections: ["headerLogo"],
   },
   {
