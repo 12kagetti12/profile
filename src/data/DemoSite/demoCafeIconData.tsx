@@ -5,7 +5,7 @@ import iconDemoCafeStory32px from "public/DemoSite/iconDemoCafeStory32px.svg";
 import iconDemoCafeMap32px from "public/DemoSite/iconDemoCafeMap32px.svg";
 import iconDemoCafeArrowUp32px from "public/DemoSite/iconDemoCafeArrowUp32px.svg";
 
-type Icon = {
+type IconProperty = {
   id: number;
   iconSvg: React.FC;
   text: string;
@@ -13,7 +13,7 @@ type Icon = {
   applicableSections: string[];
 };
 
-const navIcons: Icon[] = [
+const navIcons: IconProperty[] = [
   {
     id: 0,
     iconSvg: iconDemoCafeLogo96px,

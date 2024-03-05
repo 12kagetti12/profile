@@ -102,9 +102,11 @@ export default function DemoCafe() {
         className="fixed z-30 flex h-0 w-full items-center justify-center px-4 sm:h-16 sm:bg-white sm:px-4"
       >
         <div className="flex max-w-screen-lg justify-center sm:z-30 sm:h-fit sm:w-full sm:items-center">
-          <h1 className="z-40 w-14 opacity-0 sm:opacity-100">
+          <h1 className="z-40 w-14 fill-[#FFCA99] text-[#FFCA99] opacity-0 sm:opacity-100">
             <Link href="/demoCafe/#areaTop" scroll={false}>
-              <logoIcon.iconSvg />
+              <svg className="h-14 w-14 fill-[#FFCA99]">
+                <logoIcon.iconSvg />
+              </svg>
             </Link>
           </h1>
           <nav className="fixed bottom-0 left-0 z-30 flex h-14 w-full max-w-5xl items-center justify-end bg-white sm:static sm:top-0 sm:bg-opacity-0">
@@ -170,17 +172,15 @@ export default function DemoCafe() {
                 loading="lazy"
               />
             </picture>
-            <div className="absolute bottom-[12vh] flex w-full flex-col items-end bg-[#FFCA99] bg-opacity-60 px-4 backdrop-blur-sm">
-              <img
-                className="fill-current drop-shadow-md"
-                src="/DemoSite/iconDemoCafeLogo96px.svg"
-                alt="logo"
-                width={96}
-                height={96}
-              />
-              <h1 className="relative -top-4 z-10 mx-2 h-8 text-4xl text-white drop-shadow-md">
-                Demo Cafe
-              </h1>
+            <div className="absolute bottom-20 flex h-auto w-full justify-center bg-[#FFCA99] bg-opacity-60 backdrop-blur-sm">
+              <div className="flex h-fit w-full max-w-5xl flex-col items-end px-4">
+                <svg className="h-24 w-24 fill-white drop-shadow-md">
+                  <logoIcon.iconSvg />
+                </svg>
+                <h1 className="relative -top-4 z-10 mx-2 h-8 text-4xl text-white drop-shadow-md">
+                  Demo Cafe
+                </h1>
+              </div>
             </div>
           </div>
         </section>
@@ -279,10 +279,9 @@ export default function DemoCafe() {
                 テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
               </p>
             </div>
-          </div>
-          <Button onClick={() => handleClick(0)}>
-            {displayShow[0] ? "close" : "more"}
-          </Button>
+            <Button onClick={() => handleClick(0)}>
+              {displayShow[0] ? "close" : "more"}
+            </Button>
         </section>
         <section
           id="areaMap"
