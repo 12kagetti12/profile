@@ -147,7 +147,7 @@ export default function DemoCafe() {
       </header>
       <main>
         <section id="areaTop" ref={areaTopRef}>
-          <div className="mx-0 h-[100vh]">
+          <div className="mx-0 h-[100vh] sm:pt-16">
             <picture className="h-[100vh] w-[100vw]">
               <source
                 className="h-full w-full object-cover"
@@ -186,7 +186,7 @@ export default function DemoCafe() {
         </section>
         <section
           id="areaMenu"
-          className="my-20 flex flex-col items-center"
+          className="my-20 flex flex-col items-center sm:pt-16"
           ref={areaMenuRef}
         >
           <div
@@ -227,7 +227,7 @@ export default function DemoCafe() {
         </section>
         <section
           id="areaStory"
-          className="my-20 flex flex-col items-center"
+          className="my-20 flex flex-col items-center sm:pt-16"
           ref={areaStoryRef}
         >
           <div
@@ -262,7 +262,7 @@ export default function DemoCafe() {
               story
             </h1>
           </div>
-          <div className="relative m-4 flex flex-col items-center">
+          <div className="relative m-4 flex max-w-5xl flex-col items-center">
             <h2 className="demoCafeStyleH2">coffee</h2>
             <div
               key={0}
