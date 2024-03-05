@@ -268,8 +268,8 @@ export default function DemoCafe() {
               key={0}
               className={
                 displayShow[0]
-                  ? "max-h-[100vh] overflow-y-hidden transition-all duration-1000 ease-in after:opacity-0 after:transition-opacity after:duration-1000"
-                  : "max-h-[20vh] overflow-y-hidden transition-all duration-1000 ease-out after:absolute after:bottom-0 after:left-0 after:z-10 after:inline-block after:h-8 after:w-full after:bg-gradient-to-t after:from-white after:to-white/70 after:opacity-100 after:transition-opacity after:duration-1000 after:content-['']"
+                  ? "mb-10 max-h-[100vh] overflow-y-hidden transition-all duration-1000 ease-in after:opacity-0 after:transition-opacity after:duration-1000"
+                  : "mb-4 max-h-[20vh] overflow-y-hidden transition-all duration-1000 ease-out after:absolute after:bottom-5 after:left-0 after:z-10 after:inline-block after:h-16 after:w-full after:bg-gradient-to-t after:from-white after:to-white/70 after:opacity-100 after:transition-opacity after:duration-1000 after:content-['']"
               }
             >
               <p className="text-justify indent-4 text-[#614D3A]">
@@ -282,10 +282,11 @@ export default function DemoCafe() {
             <Button onClick={() => handleClick(0)}>
               {displayShow[0] ? "close" : "more"}
             </Button>
+          </div>
         </section>
         <section
           id="areaMap"
-          className="my-20 flex flex-col items-center"
+          className="my-20 flex flex-col items-center sm:pt-16"
           ref={areaMapRef}
         >
           <div
