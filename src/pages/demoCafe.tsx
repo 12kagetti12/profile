@@ -99,12 +99,12 @@ export default function DemoCafe() {
     <>
       <header
         id="header"
-        className="fixed z-30 flex h-0 w-full items-center justify-center px-4 sm:h-16 sm:bg-white sm:px-4"
+        className="z-30 flex h-0 w-full items-center justify-center px-4 sm:fixed sm:h-16 sm:bg-white sm:px-4"
       >
         <div className="flex max-w-screen-lg justify-center sm:z-30 sm:h-fit sm:w-full sm:items-center">
           <h1 className="z-40 w-14 fill-[#FFCA99] text-[#FFCA99] opacity-0 sm:opacity-100">
             <Link href="/demoCafe/#areaTop" scroll={false}>
-              <svg className="h-14 w-14 fill-[#FFCA99]">
+              <svg className="h-0 w-0 fill-[#FFCA99] sm:h-14 sm:w-14">
                 <logoIcon.iconSvg />
               </svg>
             </Link>
