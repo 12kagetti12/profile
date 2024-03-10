@@ -6,10 +6,10 @@ import Icon from "@/components/DemoSite/demoCafeIconComponent";
 import Button from "@/components/DemoSite/demoCafeButton";
 import {
   APIProvider,
+  AdvancedMarker,
   InfoWindow,
   Map,
-  Marker,
-  useMarkerRef,
+  useAdvancedMarkerRef,
 } from "@vis.gl/react-google-maps";
 import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -89,7 +89,7 @@ export default function DemoCafe() {
   };
 
   const position = { lat: 35.65720571170869, lng: 139.6677287383595 };
-  const [markerRef, marker] = useMarkerRef();
+  const [markerRef, marker] = useAdvancedMarkerRef();
   const [infoWindowShow, setInfoWindowShow] = useState(true);
   const toggleInfoWindow = () =>
     setInfoWindowShow((previousState) => !previousState);
@@ -331,11 +331,11 @@ export default function DemoCafe() {
                 mapTypeControl={false}
                 streetViewControl={false}
               >
-                <Marker
+                <AdvancedMarker
                   ref={markerRef}
                   position={position}
                   onClick={toggleInfoWindow}
-                ></Marker>
+                />
                 {infoWindowShow && (
                   <InfoWindow anchor={marker} onCloseClick={closeInfoWindow}>
                     <div className="flex flex-col items-center">
