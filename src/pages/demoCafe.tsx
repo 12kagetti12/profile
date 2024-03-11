@@ -333,7 +333,7 @@ export default function DemoCafe() {
               Map
             </h1>
           </div>
-          <div className="mb-4 h-[50vh] w-[80vw]">
+          <div className="mb-4 h-[50vh] w-[80vw] max-w-5xl">
             <APIProvider apiKey={mapAPIkey}>
               <Map
                 center={position}
@@ -362,11 +362,14 @@ export default function DemoCafe() {
               </Map>
             </APIProvider>
           </div>
-          <address className="mb-4 flex flex-col items-start">
+          <address className="mb-4 flex max-w-5xl flex-col items-start">
+            <h3 className="text-[#FFCA99]"></h3>
             <dl className="flex text-left">
               <dt className="w-20 text-[#FFCA99]">address</dt>
               <dd className="max-w-[50vw] break-words text-[#614D3A]">
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                <Link href="https://www.google.com/maps/dir/?api=1&destination=35.65720571170869,139.6677287383595">
+                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                </Link>
               </dd>
             </dl>
             <dl className="flex text-left">
