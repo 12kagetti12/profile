@@ -1,8 +1,7 @@
 import menus from "@/data/DemoSite/demoCafeMenuData";
+import { MenuBlockProps } from "@/types/demoCafeTypes";
 
-type Props = { menuClassification: string };
-
-const MenuBlock = ({ menuClassification }: Props) => {
+const MenuBlock: React.FC<MenuBlockProps> = ({ menuClassification }) => {
   const matchMenus = menus.filter(
     (menu) => menu.classification === menuClassification,
   );

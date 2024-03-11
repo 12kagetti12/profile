@@ -1,9 +1,4 @@
-type Menu = {
-  id: number;
-  name: string;
-  price: number;
-  classification: string;
-};
+import { Menu } from "@/types/demoCafeTypes";
 
 const menus: Menu[] = [
   {

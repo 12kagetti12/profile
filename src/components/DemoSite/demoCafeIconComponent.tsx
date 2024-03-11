@@ -7,20 +7,20 @@ import ArrowUp from "public/DemoSite/iconDemoCafeArrowUp32px.svg";
 
 const icons = { Logo, Home, Menu, Story, Map, ArrowUp };
 
-type Name = keyof typeof icons;
-type Props = {
-  name: Name;
+type IconName = keyof typeof icons;
+type IconProps = {
+  name: IconName;
   size?: number;
   className?: string;
 };
 
 const DEFAULT_SIZE: number = 32;
 
-const Icon: React.FC<Props> = ({
+const Icon: React.FC<IconProps> = ({
   name,
   size = DEFAULT_SIZE,
   className,
-}: Props) => {
+}) => {
   const SvgComponent = icons[name];
 
   return (

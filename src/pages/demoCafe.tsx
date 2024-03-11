@@ -15,10 +15,11 @@ import {
 } from "@vis.gl/react-google-maps";
 import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { IconProperty, MapPosition } from "@/types/demoCafeTypes";
 
 const mapAPIkey: string = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY;
 const mapID: string = process.env.NEXT_PUBLIC_MAP_ID;
-const logoIcon = navIcons.find((icon) => icon.text === "logo");
+const logoIcon: IconProperty = navIcons.find((icon) => icon.text === "logo");
 
 export default function DemoCafe() {
   const useInViewOptions = { threshold: 0, rootMargin: "-20% 0px" };
@@ -27,7 +28,12 @@ export default function DemoCafe() {
   const { ref: areaStoryRef, inView: InViewStory } =
     useInView(useInViewOptions);
   const { ref: areaMapRef, inView: InViewMap } = useInView(useInViewOptions);
-  const [iconState, setIconState] = useState([false, false, false, false]);
+  const [iconState, setIconState] = useState<boolean[]>([
+    false,
+    false,
+    false,
+    false,
+  ]);
 
   useEffect(() => {
     const prevIconState = [InViewTop, InViewMenu, InViewStory, InViewMap];
@@ -40,9 +46,9 @@ export default function DemoCafe() {
   const menuImageRef = useRef<HTMLDivElement>(null);
   const storyImageRef = useRef<HTMLDivElement>(null);
   const mapImageRef = useRef<HTMLDivElement>(null);
-  const [menuImageHeight, setMenuImageHeight] = useState("h-[70vh]");
-  const [storyImageHeight, setStoryImageHeight] = useState("h-[70vh]");
-  const [mapImageHeight, setMapImageHeight] = useState("h-[70vh]");
+  const [menuImageHeight, setMenuImageHeight] = useState<string>("h-[70vh]");
+  const [storyImageHeight, setStoryImageHeight] = useState<string>("h-[70vh]");
+  const [mapImageHeight, setMapImageHeight] = useState<string>("h-[70vh]");
 
   useEffect(() => {
     const imageInViewOptions = {
@@ -83,16 +89,20 @@ export default function DemoCafe() {
   }, [menuImageRef, storyImageRef, mapImageRef]);
 
   const storyContentsDisplay: boolean[] = [false, false, false];
-  const [displayShow, setDisplayShow] = useState(storyContentsDisplay);
+  const [displayShow, setDisplayShow] =
+    useState<boolean[]>(storyContentsDisplay);
   const handleClick = (index: number) => {
     const newDisplayShowState: boolean[] = [...displayShow];
     newDisplayShowState[index] = !newDisplayShowState[index];
     setDisplayShow(newDisplayShowState);
   };
 
-  const position = { lat: 35.65720571170869, lng: 139.6677287383595 };
+  const position: MapPosition = {
+    lat: 35.65720571170869,
+    lng: 139.6677287383595,
+  };
   const [markerRef, marker] = useAdvancedMarkerRef();
-  const [infoWindowShow, setInfoWindowShow] = useState(true);
+  const [infoWindowShow, setInfoWindowShow] = useState<boolean>(true);
   const toggleInfoWindow = () =>
     setInfoWindowShow((previousState) => !previousState);
   const closeInfoWindow = () => setInfoWindowShow(false);

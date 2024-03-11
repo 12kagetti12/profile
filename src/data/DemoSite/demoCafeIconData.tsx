@@ -4,14 +4,7 @@ import iconDemoCafeMenu32px from "public/DemoSite/iconDemoCafeMenu32px.svg";
 import iconDemoCafeStory32px from "public/DemoSite/iconDemoCafeStory32px.svg";
 import iconDemoCafeMap32px from "public/DemoSite/iconDemoCafeMap32px.svg";
 import iconDemoCafeArrowUp32px from "public/DemoSite/iconDemoCafeArrowUp32px.svg";
-
-type IconProperty = {
-  id: number;
-  iconSvg: React.FC;
-  text: string;
-  hrefSection: string;
-  applicableSections: string[];
-};
+import { IconProperty } from "@/types/demoCafeTypes";
 
 const navIcons: IconProperty[] = [
   {
