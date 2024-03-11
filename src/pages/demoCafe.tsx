@@ -1,3 +1,5 @@
+"use client";
+
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import MenuBlock from "@/components/DemoSite/demoCafeMenuBlock";
@@ -304,7 +306,7 @@ export default function DemoCafe() {
               <source
                 className="absolute h-full w-full object-cover"
                 media="(max-width: 1920px)"
-                srcSet="/DemoSite/imgDemoCafeMap_xl copy.webp 1920w"
+                srcSet="/DemoSite/imgDemoCafeMap_xl.webp 1920w"
                 width="1920"
                 height="1280"
               />
