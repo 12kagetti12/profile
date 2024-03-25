@@ -2,11 +2,14 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState, useRef, useCallback, useEffect } from "react";
-import ContentList from "@/components/ContentList";
 import useIntersectionObserver from "@/hocks/useHandleIsShow";
 import dynamic from "next/dynamic";
+import PaperContentList from "@/components/ContentList/paperContentList";
 
-const ModalCard = dynamic(() => import("@/components/ModalCard"));
+const PaperModalCard = dynamic(
+  () => import("@/components/ModalCard/paperModalCard"),
+  { ssr: false },
+);
 
 type PaperJob = {
   id: number;
@@ -143,7 +146,7 @@ export default function Paper() {
           <ul>
             {paperJobs.map((item: PaperJob, index: number) => (
               <div className="relative" key={item.id}>
-                <ContentList
+                <PaperContentList
                   {...item}
                   style={
                     index % 2 === 0 ? "sm:flex-row-reverse" : "sm:flex-row"
@@ -151,7 +154,7 @@ export default function Paper() {
                   isShowProps={isShow[item.id]}
                   handleDisplay={() => toggleVisibility(item.id)}
                 />
-                <ModalCard
+                <PaperModalCard
                   {...item}
                   isShowProps={isShow[item.id]}
                   handleDisplay={() => toggleVisibility(item.id)}
