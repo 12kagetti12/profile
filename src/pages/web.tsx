@@ -2,30 +2,26 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState, useRef, useCallback, useEffect } from "react";
-import ContentList from "@/components/ContentList";
 import useIntersectionObserver from "@/hocks/useHandleIsShow";
 import dynamic from "next/dynamic";
+import { JobProperties } from "@/types/portfolioTypes";
+import WebContentList from "@/components/ContentList/webContentList";
 
-const ModalCard = dynamic(() => import("@/components/ModalCard"));
+const WebModalCard = dynamic(
+  () => import("@/components/ModalCard/webModalCard"),
+  {
+    ssr: false,
+  },
+);
 
-type PaperJob = {
-  id: number;
-  occupation: string;
-  media: string;
-  imgSrc: string;
-  client: string;
-  text: string;
-  url: string;
-};
-
-const paperJobs: PaperJob[] = [
+const webJobs: JobProperties[] = [
   {
     id: 0,
     occupation: "WEB",
     media: "Demo Site Cafe",
-    imgSrc: "#",
+    imgSrc: "/webThumbnailDemoCafe_md.webp",
     client: "Demo",
-    text: "#",
+    text: "店の雰囲気が伝わるサイトの依頼を受けたと想定して作成しました。店内の様子、メニュー、お店のコンセプトや地図を掲載を想定しています。",
     url: "/demoCafe",
   },
 ];
@@ -54,7 +50,7 @@ export default function Web() {
   useIntersectionObserver([areaWorkRef], showElements);
 
   const [isShow, setIsShow] = useState(() => {
-    const jobsLength: number = paperJobs.length;
+    const jobsLength: number = webJobs.length;
     return Array.from({ length: jobsLength }, () => false);
   });
 
@@ -88,7 +84,7 @@ export default function Web() {
       <main ref={areaWorkRef}>
         <section
           className="mx-4 mt-4 sm:mx-auto sm:mb-0 sm:mt-0 sm:max-w-screen-lg sm:pt-20"
-          id="paperAreaTop"
+          id="webAreaTop"
           ref={areaWorkRef}
         >
           <div className="flex flex-col items-center">
@@ -96,9 +92,9 @@ export default function Web() {
             <h1 className="pb-8 capitalize leading-10">Store Site</h1>
           </div>
           <ul>
-            {paperJobs.map((item: PaperJob, index: number) => (
+            {webJobs.map((item: JobProperties, index: number) => (
               <div className="relative" key={item.id}>
-                <ContentList
+                <WebContentList
                   {...item}
                   style={
                     index % 2 === 0 ? "sm:flex-row-reverse" : "sm:flex-row"
@@ -106,7 +102,7 @@ export default function Web() {
                   isShowProps={isShow[item.id]}
                   handleDisplay={() => toggleVisibility(item.id)}
                 />
-                <ModalCard
+                <WebModalCard
                   {...item}
                   isShowProps={isShow[item.id]}
                   handleDisplay={() => toggleVisibility(item.id)}
