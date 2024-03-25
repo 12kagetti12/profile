@@ -1,26 +1,16 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
+import { ContentListProps } from "@/types/portfolioTypes";
 
-type Props = {
-  id: number;
-  imgSrc: string;
-  client: string;
-  media: string;
-  url: string;
-  style: string;
-  isShowProps: boolean;
-  handleDisplay: () => void;
-};
-
-const ContentList = ({
+const PaperContentList = ({
   imgSrc,
   client,
   media,
   url,
   style,
   handleDisplay,
-}: Props) => {
+}: ContentListProps) => {
   const { ref, inView } = useInView({
     rootMargin: "-30px",
     threshold: 0.3,
@@ -43,10 +33,10 @@ const ContentList = ({
   return (
     <li
       ref={ref}
-      className={`flex flex-col items-start pb-6 sm:flex-1 sm:items-start
+      className={`flex flex-col items-start gap-4 pb-6 sm:flex-1 sm:items-start
         ${isDisplay} ${style}`}
     >
-      <div className="relative flex min-h-[30vh] w-full justify-center sm:h-[60vh] sm:w-1/2">
+      <div className="relative flex max-h-[60vh] min-h-[30vh] w-full justify-center sm:h-[60vh] sm:w-1/2">
         <h2 className="absolute top-1/2 z-0 aspect-auto animate-pulse text-gray-300 drop-shadow-lg">
           Loading...
         </h2>
@@ -80,4 +70,4 @@ const ContentList = ({
   );
 };
 
-export default ContentList;
+export default PaperContentList;
