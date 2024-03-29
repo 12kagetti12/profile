@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -82,14 +83,44 @@ export default function Home() {
         ></Header>
       </section>
       <main>
-        <div className="mx-0 mb-20 sm:mb-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            className="h-[90vh] object-cover filter sm:h-screen sm:w-full"
-            src="/mainVisualWinter.jpg"
-            alt="mainVisual"
-          />
-        </div>
+        <section id="mainVisual">
+          <div className="mx-0 mb-20 h-[100vh] w-[100vw] pb-14 pt-0 sm:mb-0 sm:pb-0 sm:pt-20">
+            <picture className="object-cover filter">
+              <source
+                className="h-full w-screen object-cover"
+                media="(max-width: 432px)"
+                srcSet="/mainVisualSpring_mdv_@Sebastian-Hans.webp 640w"
+                width="360"
+                height="640"
+              />
+              <source
+                className="h-full w-screen object-cover"
+                media="(max-width: 640px)"
+                srcSet="/mainVisualSpring_mdv_@Sebastian-Hans.webp 432w"
+                width="432"
+                height="768"
+              />
+              <source
+                className="h-full w-screen object-cover"
+                media="(max-width: 1920px)"
+                srcSet="/mainVisualSpring_FH_@Sebastian-Hans.webp 1920w"
+                width="1920"
+                height="1080"
+              />
+              <img
+                className="h-full w-screen object-cover"
+                src="/mainVisualSpring_FH_@Sebastian-Hans.jpg"
+                alt="mainVisual"
+                width="1920"
+                height="1080"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+          <p className="absolute bottom-14 right-0 text-white sm:bottom-0">
+            &copy;Sebastian Hans
+          </p>
+        </section>
 
         <section
           className="mb-20 mt-4 sm:mx-auto sm:mb-0 sm:max-w-screen-lg sm:pt-20"
@@ -99,7 +130,6 @@ export default function Home() {
           <div className="mx-4 flex flex-col items-center">
             <h1 className="mb-6 capitalize">Profile</h1>
             <div className="flex items-start justify-center">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className="mr-4 h-24 w-24 rounded-full"
                 src="/profile_polkaDot.jpg"
