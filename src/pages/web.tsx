@@ -21,7 +21,7 @@ const webJobs: JobProperties[] = [
     media: "Demo Site Cafe",
     imgSrc: "/webThumbnailDemoCafe_md.webp",
     client: "Demo",
-    text: "店の雰囲気が伝わるサイトの依頼を受けたと想定して作成しました。店内の様子、メニュー、お店のコンセプトや地図を掲載を想定しています。",
+    text: `店の雰囲気が伝わるサイトの依頼を受けたと想定して作成しました。店内の様子、メニュー、お店のコンセプトや地図を掲載を想定しています。\n構築環境\nNext.js13、tailwind、typescript`,
     url: "/demoCafe",
   },
 ];

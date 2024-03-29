@@ -2,6 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import { ModalProps } from "@/types/portfolioTypes";
+import Link from "next/link";
 
 const WebModalCard: React.FC<ModalProps> = ({
   occupation,
@@ -32,10 +33,20 @@ const WebModalCard: React.FC<ModalProps> = ({
       <h2 className="pb-2 leading-10">{media}</h2>
       <div className="flex h-fit max-h-[50vh] flex-col overflow-y-scroll sm:max-h-[60vh] sm:w-full sm:flex-row">
         <ul className="mb-2 h-full w-auto snap-mandatory sm:h-auto sm:w-1/2 sm:pr-4">
-          <li className="">{occupation}</li>
-          <li className="">{text}</li>
-          <li className="">{client}</li>
-          <li className="break-all">{url}</li>
+          <li className="whitespace-pre-wrap">{occupation}</li>
+          <li className="whitespace-pre-wrap">{text}</li>
+          <li className="whitespace-pre-wrap">Client：{client}</li>
+          <li className="break-all">
+            URL：
+            <Link
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="break-all hover:text-gray-500"
+            >
+              {url}
+            </Link>
+          </li>
         </ul>
         <div className="aspect-auto h-full w-full sm:h-fit sm:w-1/2 sm:overflow-y-scroll">
           <img
