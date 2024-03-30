@@ -4,7 +4,7 @@ portfolio
 
 # DEMO
 
-https://profile-pf3yn75eq-12kagetti12.vercel.app/
+http://kageyama-portfolio.jp/
 
 # Features
 
@@ -12,11 +12,10 @@ Introducing myself and my portfolio.
 
 # Requirement
 
-- next : "13.4.6"
-- react : "18.2.0"
-- react-dom : "18.2.0"
-- tailwindcss : "^3.3.3"
-- "typescript": "5.2.2"
+- next : "13.5.6"
+- tailwindcss : "3.4.3"
+- typescript: "5.2.2"
+- vis.gl/react-google-maps : "0.4.3"
 
 # Installation
 
@@ -27,19 +26,6 @@ npx create-next-app@latest
 ```
 
 ## prettier-plugin-tailwindcss
-
-```
-npm install -D prettier prettier-plugin-tailwindcss
-```
-
-Then add the plugin to your Prettier config
-
-```
-// prettier.config.js
-module.exports = {
-  plugins: ['prettier-plugin-tailwindcss'],
-}
-```
 
 # Usage
 
