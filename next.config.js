@@ -18,6 +18,8 @@ const nextConfig = {
   images: {
     disableStaticImages: true,
   },
+  output: "export",
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
