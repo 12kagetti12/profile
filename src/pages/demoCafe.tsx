@@ -4,21 +4,22 @@
 import Link from "next/link";
 import MenuBlock from "@/components/DemoSite/demoCafeMenuBlock";
 import navIcons from "@/data/DemoSite/demoCafeIconData";
-import Icon from "@/components/DemoSite/demoCafeIconComponent";
+// import Icon from "@/components/DemoSite/demoCafeIconComponent";
 import Button from "@/components/DemoSite/demoCafeButton";
-import {
-  APIProvider,
-  AdvancedMarker,
-  InfoWindow,
-  Map,
-  useAdvancedMarkerRef,
-} from "@vis.gl/react-google-maps";
+// import {
+//   APIProvider,
+//   AdvancedMarker,
+//   InfoWindow,
+//   Map,
+//   useAdvancedMarkerRef,
+// } from "@vis.gl/react-google-maps";
 import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { IconProperty, MapPosition } from "@/types/demoCafeTypes";
+// import { IconProperty, MapPosition } from "@/types/demoCafeTypes";
+import { IconProperty } from "@/types/demoCafeTypes";
 
-const mapAPIkey: string = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY;
-const mapID: string = process.env.NEXT_PUBLIC_MAP_ID;
+// const mapAPIkey: string = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY;
+// const mapID: string = process.env.NEXT_PUBLIC_MAP_ID;
 const logoIcon: IconProperty = navIcons.find((icon) => icon.text === "logo");
 
 export default function DemoCafe() {
@@ -97,15 +98,15 @@ export default function DemoCafe() {
     setDisplayShow(newDisplayShowState);
   };
 
-  const position: MapPosition = {
-    lat: 35.65720571170869,
-    lng: 139.6677287383595,
-  };
-  const [markerRef, marker] = useAdvancedMarkerRef();
-  const [infoWindowShow, setInfoWindowShow] = useState<boolean>(true);
-  const toggleInfoWindow = () =>
-    setInfoWindowShow((previousState) => !previousState);
-  const closeInfoWindow = () => setInfoWindowShow(false);
+  // const position: MapPosition = {
+  //   lat: 35.65720571170869,
+  //   lng: 139.6677287383595,
+  // };
+  // const [markerRef, marker] = useAdvancedMarkerRef();
+  // const [infoWindowShow, setInfoWindowShow] = useState<boolean>(true);
+  // const toggleInfoWindow = () =>
+  //   setInfoWindowShow((previousState) => !previousState);
+  // const closeInfoWindow = () => setInfoWindowShow(false);
 
   return (
     <>
@@ -334,7 +335,12 @@ export default function DemoCafe() {
             </h1>
           </div>
           <div className="mb-4 h-[50vh] w-[80vw] max-w-5xl">
-            <APIProvider apiKey={mapAPIkey}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3241.8069496889907!2d139.66778311534432!3d35.657127682607246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1712380607278!5m2!1sja!2sjp"
+              className="h-full w-full"
+              loading="lazy"
+            ></iframe>
+            {/* <APIProvider apiKey={mapAPIkey}>
               <Map
                 center={position}
                 zoom={14}
@@ -360,7 +366,7 @@ export default function DemoCafe() {
                   </InfoWindow>
                 )}
               </Map>
-            </APIProvider>
+            </APIProvider> */}
           </div>
           <address className="mb-4 flex max-w-5xl flex-col items-start">
             <h3 className="text-[#FFCA99]"></h3>
