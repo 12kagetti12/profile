@@ -336,7 +336,7 @@ export default function DemoCafe() {
           </div>
           <div className="mb-4 h-[50vh] w-[80vw] max-w-5xl">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3241.8069496889907!2d139.66778311534432!3d35.657127682607246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1712380607278!5m2!1sja!2sjp"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1927.5853663302564!2d139.6661900061837!3d35.65732068018549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f368f164e4f1%3A0x28a367c8cf87951b!2z44CSMTU1LTAwMzIg5p2x5Lqs6YO95LiW55Sw6LC35Yy65Luj5rKi77yV5LiB55uu77yY4oiS77yR77yT!5e0!3m2!1sja!2sjp!4v1712460363729!5m2!1sja!2sjp"
               className="h-full w-full"
               loading="lazy"
             ></iframe>
