@@ -373,7 +373,11 @@ export default function DemoCafe() {
             <dl className="flex text-left">
               <dt className="w-20 text-[#FFCA99]">address</dt>
               <dd className="max-w-[50vw] break-words text-[#614D3A]">
-                <Link href="https://www.google.com/maps/dir/?api=1&destination=35.65720571170869,139.6677287383595">
+                <Link
+                  href="https://www.google.com/maps/dir/?api=1&destination=35.65720571170869,139.6677287383595"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
                 </Link>
               </dd>
