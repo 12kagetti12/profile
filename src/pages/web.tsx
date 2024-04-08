@@ -6,6 +6,7 @@ import useIntersectionObserver from "@/hocks/useHandleIsShow";
 import dynamic from "next/dynamic";
 import { JobProperties } from "@/types/portfolioTypes";
 import WebContentList from "@/components/ContentList/webContentList";
+import portfolioJobs from "@/data/portfolioData";
 
 const WebModalCard = dynamic(
   () => import("@/components/ModalCard/webModalCard"),
@@ -14,17 +15,9 @@ const WebModalCard = dynamic(
   },
 );
 
-const webJobs: JobProperties[] = [
-  {
-    id: 0,
-    occupation: "WEB",
-    media: "Demo Site Cafe",
-    imgSrc: "/webThumbnailDemoCafe_md.webp",
-    client: "Demo",
-    text: `店の雰囲気が伝わるサイトの依頼を受けたと想定して作成しました。店内の様子、メニュー、お店のコンセプトや地図を掲載を想定しています。\n構築環境\nNext.js13、tailwind、typescript`,
-    url: "/demoCafe",
-  },
-];
+const webJobs: JobProperties[] = portfolioJobs.filter(
+  (jobProperty: JobProperties) => jobProperty.occupation === "WEB",
+);
 
 export default function Web() {
   const areaWorkRef = useRef<HTMLDialogElement>(null);
