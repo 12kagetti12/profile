@@ -5,16 +5,9 @@ import Footer from "@/components/Footer";
 import ContentCard from "@/components/ContentCard";
 import { useRef, useState } from "react";
 import useIntersectionObserver from "@/hocks/useHandleIsShow";
+import { Work } from "@/types/portfolioTypes";
 
-type WORK = {
-  id: number;
-  occupation: string;
-  media: string;
-  imgSrc: string;
-  text: string;
-};
-
-const WORKS: WORK[] = [
+const Works: Work[] = [
   {
     id: 0,
     occupation: "DTP",
@@ -160,7 +153,7 @@ export default function Home() {
           <div className="flex flex-col items-center">
             <h1 className="mx-4 mb-6 capitalize">Work</h1>
             <ul className="grid w-full auto-cols-auto gap-x-8 gap-y-16 sm:grid-cols-2">
-              {WORKS.map((item: WORK) => (
+              {Works.map((item: Work) => (
                 <ContentCard
                   key={item.occupation}
                   imgSrc={item.imgSrc}

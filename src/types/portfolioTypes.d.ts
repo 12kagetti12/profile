@@ -1,3 +1,11 @@
+export type Work = {
+  id: number;
+  occupation: string;
+  media: string;
+  imgSrc: string;
+  text: string;
+};
+
 export type JobProperties = {
   id: number;
   occupation: string;
