@@ -1,39 +1,49 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# ===========================
+# 依存パッケージ
+# ===========================
 /node_modules
-/.pnp
-.pnp.js
 
-# testing
-/coverage
+# package-lock.json は必ずコミットする（CI の npm ci に必要）
 
-# next.js
+# ===========================
+# ビルド成果物（CI でビルドするため除外）
+# ===========================
 /.next/
 /out/
 
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
+# ===========================
+# 環境変数
+# ===========================
+.env
+.env.local
 .env*.local
 
-# vercel
-.vercel
+# ===========================
+# ローカル開発
+# ===========================
+# next dev --experimental-https が生成する SSL 証明書
+certificates/
 
-# typescript
+# ===========================
+# OS・エディタ
+# ===========================
+.DS_Store
+Thumbs.db
+
+# ===========================
+# ログ
+# ===========================
+npm-debug.log*
+*.log
+
+# ===========================
+# TypeScript
+# ===========================
 *.tsbuildinfo
 next-env.d.ts
 
-certificates
-
+# ===========================
+# その他
+# ===========================
+*.pem
 .claudeignore
